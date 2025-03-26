@@ -1,39 +1,37 @@
-<html>
-	<head>
-		
-	<body>
-		<header>
-		</header>
-		<main>
-		</main>
-		<footer>
-		</footer>
-	</body>
-</html>
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Functions</title>
+		<title>Ctrl Z</title>
 		<link href="assets/reset.css" rel="stylesheet">
 		<link href="assets/style.css" rel="stylesheet">
-		<script defer src="assets/spotify.js"></script>
+		<script defer src="assets/music.js"></script>
 	</head>
-</head>
-<body>
-  <h1>Authenticating...</h1>
-
-  <script>
-    const hash = window.location.hash.substring(1);
-    const params = new URLSearchParams(hash);
-    const accessToken = params.get("access_token");
-
-    if (accessToken) {
-      localStorage.setItem("spotify_access_token", accessToken);
-      window.location.href = "index.html"; // or wherever you want to go after login
-    } else {
-      document.body.innerHTML = "Authorization failed. Try again.";
-    }
-  </script>
-</body>
+	<body>
+		<section class="noise-control" data-noise="white">
+			<header>White Noise</header>
+			<input type="range" min="0" max="100" value="50" class="slider">
+			<span class="volume-display">50%</span>
+		</section>
+	
+		<section class="noise-control" data-noise="pink">
+			<header>Pink Noise</header>
+			<input type="range" min="0" max="100" value="50" class="slider">
+			<span class="volume-display">50%</span>
+		</section>
+	
+		<section class="noise-control" data-noise="brown">
+			<header>Brown Noise</header>
+			<input type="range" min="0" max="100" value="50" class="slider">
+			<span class="volume-display">50%</span>
+		</section>
+	
+		<footer>
+			<button id="playBtn">Play</button>
+			<button id="stopBtn">Stop</button>
+			<label for="masterVolume">Master Volume:</label>
+			<input type="range" min="0" max="100" value="70" id="masterVolume">
+			<span id="masterVolumeDisplay">70%</span>
+		</footer>
+	</body>
 </html>
