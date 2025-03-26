@@ -1,11 +1,6 @@
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Functions</title>
-		<link href="assets/reset.css" rel="stylesheet">
-		<link href="assets/style.css" rel="stylesheet">
-		<script defer src="assets/spotify.js"></script>
-	</head>
+		
 	<body>
 		<header>
 		</header>
@@ -14,4 +9,31 @@
 		<footer>
 		</footer>
 	</body>
+</html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Functions</title>
+		<link href="assets/reset.css" rel="stylesheet">
+		<link href="assets/style.css" rel="stylesheet">
+		<script defer src="assets/spotify.js"></script>
+	</head>
+</head>
+<body>
+  <h1>Authenticating...</h1>
+
+  <script>
+    const hash = window.location.hash.substring(1);
+    const params = new URLSearchParams(hash);
+    const accessToken = params.get("access_token");
+
+    if (accessToken) {
+      localStorage.setItem("spotify_access_token", accessToken);
+      window.location.href = "index.html"; // or wherever you want to go after login
+    } else {
+      document.body.innerHTML = "Authorization failed. Try again.";
+    }
+  </script>
+</body>
 </html>
