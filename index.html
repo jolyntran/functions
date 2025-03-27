@@ -1,80 +1,86 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Ctrl Z</title>
-		<link href="assets/reset.css" rel="stylesheet">
-		<link href="assets/style.css" rel="stylesheet">
+		<link href="assets/reset.css" rel="stylesheet" />
+		<link href="assets/style.css" rel="stylesheet" />
 		<script defer src="assets/mixer.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<section class="noise-control" data-noise="red">
-			<header>Red Noise</header>
-			<input type="range" min="0" max="100" value="50" class="slider">
-			<span class="volume-display">50%</span>
-		</section>
-		  
-		<section class="noise-control" data-noise="orange">
-			<header>Orange Noise</header>
-			<input type="range" min="0" max="100" value="50" class="slider">
-			<span class="volume-display">50%</span>
-		</section>
-		  
-		<section class="noise-control" data-noise="yellow">
-			<header>Yellow Noise</header>
-			<input type="range" min="0" max="100" value="50" class="slider">
-			<span class="volume-display">50%</span>
-		</section>
-		  
-		<section class="noise-control" data-noise="green">
-			<header>Green Noise</header>
-			<input type="range" min="0" max="100" value="50" class="slider">
-			<span class="volume-display">50%</span>
-		</section>
-		  
-		<section class="noise-control" data-noise="blue">
-			<header>Blue Noise</header>
-			<input type="range" min="0" max="100" value="50" class="slider">
-			<span class="volume-display">50%</span>
-		</section>
-		  
-		<section class="noise-control" data-noise="violet">
-			<header>Violet Noise</header>
-			<input type="range" min="0" max="100" value="50" class="slider">
-			<span class="volume-display">50%</span>
-		</section>
-		  
-		<section class="noise-control" data-noise="pink">
-			<header>Pink Noise</header>
-			<input type="range" min="0" max="100" value="50" class="slider">
-			<span class="volume-display">50%</span>
-		</section>
-		  
-		<section class="noise-control" data-noise="brown">
-			<header>Brown Noise</header>
-			<input type="range" min="0" max="100" value="50" class="slider">
-			<span class="volume-display">50%</span>
-		</section>
-		  
-		<section class="noise-control" data-noise="gray">
-			<header>Gray Noise</header>
-			<input type="range" min="0" max="100" value="50" class="slider">
-			<span class="volume-display">50%</span>
-		</section>
-		  
-
-		<section class="noise-control" data-noise="white">
-			<header>White Noise</header>
-			<input type="range" min="0" max="100" value="50" class="slider">
-			<span class="volume-display">50%</span>
-		</section>
-
+		<main>
+			<section class="noise-control" data-noise="red">
+				<div class="swatch"></div>
+				<h2>RED NOISE</h2>
+				<span class="volume-display">50%</span>
+				<input type="range" min="0" max="100" value="50" class="range" />
+			</section>
+			<section class="noise-control" data-noise="orange">
+				<div class="swatch"></div>
+				<h2>ORANGE NOISE</h2>
+				<span class="volume-display">50%</span>
+				<input type="range" min="0" max="100" value="50" class="range" />
+			</section>
+			<section class="noise-control" data-noise="yellow">
+				<div class="swatch"></div>
+				<h2>YELLOW NOISE</h2>
+				<span class="volume-display">50%</span>
+				<input type="range" min="0" max="100" value="50" class="range" />
+			</section>
+			<section class="noise-control" data-noise="green">
+				<div class="swatch"></div>
+				<h2>GREEN NOISE</h2>
+				<span class="volume-display">50%</span>
+				<input type="range" min="0" max="100" value="50" class="range" />
+			</section>
+			<section class="noise-control" data-noise="blue">
+				<div class="swatch"></div>
+				<h2>BLUE NOISE</h2>
+				<span class="volume-display">50%</span>
+				<input type="range" min="0" max="100" value="50" class="range" />
+			</section>
+			<section class="noise-control" data-noise="violet">
+				<div class="swatch"></div>
+				<h2>VIOLET NOISE</h2>
+				<span class="volume-display">50%</span>
+				<input type="range" min="0" max="100" value="50" class="range" />
+			</section>
+			<section class="noise-control" data-noise="pink">
+				<div class="swatch"></div>
+				<h2>PINK NOISE</h2>
+				<span class="volume-display">50%</span>
+				<input type="range" min="0" max="100" value="50" class="range" />
+			</section>
+			<section class="noise-control" data-noise="brown">
+				<div class="swatch"></div>
+				<h2>BROWN NOISE</h2>
+				<span class="volume-display">50%</span>
+				<input type="range" min="0" max="100" value="50" class="range" />
+			</section>
+			<section class="noise-control" data-noise="gray">
+				<div class="swatch"></div>
+				<h2>GRAY NOISE</h2>
+				<span class="volume-display">50%</span>
+				<input type="range" min="0" max="100" value="50" class="range" />
+			</section>
+			<section class="noise-control" data-noise="white">
+				<div class="swatch"></div>
+				<h2>WHITE NOISE</h2>
+				<span class="volume-display">50%</span>
+				<input type="range" min="0" max="100" value="50" class="range" />
+			</section>
+		</main>
 		<footer>
-			<button id="playBtn">Play</button>
-			<button id="stopBtn">Stop</button>
-			<label for="masterVolume">Master Volume:</label>
-			<input type="range" min="0" max="100" value="70" id="masterVolume">
+			<h2>Master Volume</h2>
+			<input type="range" min="0" max="100" value="70" id="masterVolume" class="range" />
 			<span id="masterVolumeDisplay">70%</span>
-		</footer>		  
-	</body>
+			<div>
+				<button id="playBtn">Play</button>
+				<button id="stopBtn">Stop</button>
+			</div>
+		</footer>
+ 	</body>
 </html>

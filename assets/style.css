@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;700&display=swap');
+
+:root {
+  /* Layout and sizing */
+  --card-width: 240px;
+  --card-radius: 10px;
+  --swatch-height: 240px;
+  --slider-height: 14px;
+  --thumb-size: 15px;
+
+  --font-main: 'Onest', sans-serif;
+
+  --color-bg: #f4f4f4;
+  --color-text: #111;
+  --color-muted: #333;
+  --color-white: #fff;
+  --color-border: #eee;
+
+  --accent: #007aff;
+
+  --color-red: #d62828;
+  --color-orange: #f77f00;
+  --color-yellow: #fcbf49;
+  --color-green: #80ed99;
+  --color-blue: #3a86ff;
+  --color-violet: #9d4edd;
+  --color-pink: #ff6bcb;
+  --color-brown: #a2845e;
+  --color-gray: #999;
+  --color-white-noise: #ccc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  font-family: var(--font-main);
+  padding: 2rem;
+  color: var(--color-text);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.noise-control {
+  width: var(--card-width);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  gap: 0.5rem;
+}
+
+.noise-control .swatch {
+  height: var(--swatch-height);
+  width: calc(100% + 3rem);
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+}
+
+.noise-control h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+  width: 100%;
+}
+
+.volume-display {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+
+.range {
+  width: 100%;
+  height: var(--slider-height);
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--color-border);
+  border-radius: calc(var(--slider-height) / 2);
+  overflow: hidden;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  cursor: pointer;
+  background: currentColor;
+  box-shadow: -400px 0 0 400px currentColor;
+}
+
+.range::-moz-range-thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  cursor: pointer;
+  background: currentColor;
+  box-shadow: -400px 0 0 400px currentColor;
+}
+
+footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+footer h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+#masterVolume {
+  max-width: 400px;
+  width: 90%;
+  margin: 0.5rem auto;
+  display: block;
+  color: var(--color-muted);
+}
+
+#masterVolumeDisplay {
+  display: block;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: var(--color-muted);
+}
+
+footer button {
+  background: var(--accent);
+  color: var(--color-white);
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+footer button:hover {
+  background: #005bb5;
+}
+
+[data-noise="red"] .swatch { background: var(--color-red); }
+[data-noise="red"] .range { color: var(--color-red); }
+
+[data-noise="orange"] .swatch { background: var(--color-orange); }
+[data-noise="orange"] .range { color: var(--color-orange); }
+
+[data-noise="yellow"] .swatch { background: var(--color-yellow); }
+[data-noise="yellow"] .range { color: var(--color-yellow); }
+
+[data-noise="green"] .swatch { background: var(--color-green); }
+[data-noise="green"] .range { color: var(--color-green); }
+
+[data-noise="blue"] .swatch { background: var(--color-blue); }
+[data-noise="blue"] .range { color: var(--color-blue); }
+
+[data-noise="violet"] .swatch { background: var(--color-violet); }
+[data-noise="violet"] .range { color: var(--color-violet); }
+
+[data-noise="pink"] .swatch { background: var(--color-pink); }
+[data-noise="pink"] .range { color: var(--color-pink); }
+
+[data-noise="brown"] .swatch { background: var(--color-brown); }
+[data-noise="brown"] .range { color: var(--color-brown); }
+
+[data-noise="gray"] .swatch { background: var(--color-gray); }
+[data-noise="gray"] .range { color: var(--color-gray); }
+
+[data-noise="white"] .swatch { background: var(--color-white-noise); }
+[data-noise="white"] .range { color: var(--color-white-noise); }
