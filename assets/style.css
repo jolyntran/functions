@@ -1,22 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;700&display=swap');
-
 :root {
-  /* Layout and sizing */
-  --card-width: 240px;
-  --card-radius: 10px;
-  --swatch-height: 240px;
-  --slider-height: 14px;
-  --thumb-size: 15px;
-
   --font-main: 'Onest', sans-serif;
+  --font-size-base: 16px;
+  --font-size-heading: 12px;
+  --font-size-label: 12px;
+
+  --padding-body: 1rem;
+  --padding-card: 1rem;
+  --gap-main: 1.5rem;
+  --gap-card-content: 5px;
+
+  --card-width: 8rem;
+  --card-radius: 10px;
+  --swatch-height: 8rem;
+
+  --slider-height: 10px;
+  --thumb-size: 1rem;
 
   --color-bg: #f4f4f4;
   --color-text: #111;
   --color-muted: #333;
   --color-white: #fff;
   --color-border: #eee;
-
-  --accent: #007aff;
 
   --color-red: #d62828;
   --color-orange: #f77f00;
@@ -37,63 +41,67 @@
 }
 
 body {
-  background: var(--color-bg);
   font-family: var(--font-main);
-  padding: 2rem;
+  background: var(--color-bg);
   color: var(--color-text);
+  padding: var(--padding-body);
+  font-size: var(--font-size-base);
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
+  gap: var(--gap-main);
 }
 
 .noise-control {
   width: var(--card-width);
   border-radius: var(--card-radius);
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background: var(--color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 1.5rem;
-  gap: 0.5rem;
 }
 
 .noise-control .swatch {
   height: var(--swatch-height);
-  width: calc(100% + 3rem);
-  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  width: 100%;
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
 }
 
 .noise-control h2 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-heading);
   font-weight: 700;
   text-transform: uppercase;
-  text-align: left;
   width: 100%;
+}
+
+.controls {
+  padding: var(--padding-body);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: var(--gap-card-content)
 }
 
 .volume-display {
   font-weight: bold;
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
+  font-size: var(--font-size-label);
   display: block;
-  text-align: left;
   width: 100%;
 }
 
 .range {
   width: 100%;
   height: var(--slider-height);
-  -webkit-appearance: none;
-  appearance: none;
   background: var(--color-border);
   border-radius: calc(var(--slider-height) / 2);
   overflow: hidden;
+  outline: none;
 }
 
 .range::-webkit-slider-thumb {
@@ -102,26 +110,17 @@ main {
   height: var(--thumb-size);
   border-radius: 50%;
   cursor: pointer;
-  background: currentColor;
-  box-shadow: -400px 0 0 400px currentColor;
-}
-
-.range::-moz-range-thumb {
-  width: var(--thumb-size);
-  height: var(--thumb-size);
-  border-radius: 50%;
-  cursor: pointer;
-  background: currentColor;
-  box-shadow: -400px 0 0 400px currentColor;
+  border: 5px solid #ffffff;
+  box-shadow: -400px 0 0 400px;
 }
 
 footer {
-  margin-top: 3rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
 footer h2 {
-  font-size: 1.3rem;
+  font-size: calc(var(--font-size-heading) + 0.2rem);
   margin-bottom: 0.5rem;
 }
 
@@ -143,7 +142,7 @@ footer h2 {
 footer button {
   background: var(--accent);
   color: var(--color-white);
-  font-size: 1rem;
+  font-size: var(--font-size-label);
   padding: 0.6rem 1.2rem;
   margin: 0.5rem;
   border: none;
@@ -156,6 +155,7 @@ footer button:hover {
   background: #005bb5;
 }
 
+/* Color theming */
 [data-noise="red"] .swatch { background: var(--color-red); }
 [data-noise="red"] .range { color: var(--color-red); }
 
@@ -185,3 +185,34 @@ footer button:hover {
 
 [data-noise="white"] .swatch { background: var(--color-white-noise); }
 [data-noise="white"] .range { color: var(--color-white-noise); }
+
+/* Responsive: scale using variable overrides */
+@media (min-width: 600px) {
+  :root {
+    --card-width: 220px;
+    --swatch-height: 140px;
+    --font-size-base: 15px;
+    --font-size-heading: 1.3rem;
+    --font-size-label: 1.1rem;
+    --padding-body: 2rem;
+    --gap-main: 2rem;
+  }
+
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --card-width: 280px;
+    --swatch-height: 180px;
+    --font-size-base: 16px;
+    --font-size-heading: 1.5rem;
+    --font-size-label: 1.2rem;
+    --padding-body: 3rem 4rem;
+    --gap-main: 2.5rem;
+  }
+}
