@@ -5,12 +5,12 @@
   --font-size-heading: 11px;
   --font-size-label: 11px;
 
-  --padding-body: 1rem;
+  --padding-body: .5rem;
   --padding-card: 0.75rem;
   --gap-main: 1.5rem;
   --gap-card-content: 4px;
 
-  --card-width: 7rem;
+  --card-width: 10rem;
   --card-radius: 5px;
   --swatch-height: 6rem;
 
@@ -21,18 +21,18 @@
   --color-text: #111;
   --color-muted: #333;
   --color-white: #fff;
-  --color-border: #eee;
+  --color-border: #e3e3e3;
 
-  --color-red: rgba(249, 65, 68, 0.7);
-  --color-orange: rgba(248, 150, 30, 0.7);
-  --color-yellow: rgba(249, 199, 79, 0.7);
-  --color-green: rgba(144, 190, 109, 0.7);
-  --color-blue: rgba(89, 138, 181, 0.7);
-  --color-violet: rgba(146, 92, 191, 0.7);
-  --color-pink: rgba(237, 139, 235, 0.7);
-  --color-brown: rgba(144, 116, 87, 0.7);
-  --color-gray: rgba(153, 153, 153, 0.7);
-  --color-white-noise: rgba(238, 238, 238, 0.7);
+  --color-red: #f94144;
+  --color-orange: #f8961e;
+  --color-yellow: #f9c64f;
+  --color-green: #90be6d;
+  --color-blue: #598ab5;
+  --color-violet: #925cbf;
+  --color-pink: #ed8ceb;
+  --color-brown: #907457;
+  --color-gray: #999999;
+  --color-white-noise: #eeeeee;
 }
 
 * {
@@ -43,11 +43,26 @@
 
 body {
   font-family: var(--font-main);
-  background: var(--color-bg);
+  /* background: var(--color-bg); */
   color: var(--color-text);
   padding: var(--padding-body);
-  font-size: var(--font-size-base);
+  background: linear-gradient(106deg,#003973,#000000);
+  background-size: 120% 120%;
+  animation: gradient-animation 14s ease infinite;
 }
+  
+@keyframes body {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 main {
   display: flex;
@@ -82,7 +97,7 @@ main {
   flex-direction: column;
   text-align: left;
   gap: var(--gap-card-content);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgb(255, 255, 255);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -133,6 +148,7 @@ header {
 }
 
 header h2 {
+  color: var(--color-bg);
   font-size: calc(var(--font-size-heading) + 0.2rem);
   margin-bottom: 0.5rem;
 }
@@ -142,14 +158,14 @@ header h2 {
   width: 90%;
   margin: 0.5rem auto;
   display: block;
-  color: var(--color-muted);
+  color: var(--color-bg);
 }
 
 #masterVolumeDisplay {
   display: block;
   font-weight: 500;
   margin-top: 0.5rem;
-  color: var(--color-muted);
+  color: var(--color-bg);
 }
 
 header button {
