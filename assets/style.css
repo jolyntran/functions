@@ -2,8 +2,8 @@
   --font-main: 'Onest', sans-serif;
 
   --font-size-base: 16px;
-  --font-size-heading: 11px;
-  --font-size-label: 11px;
+  --font-size-heading: 20px;
+  --font-size-label: 16px;
 
   --padding-body: .5rem;
   --padding-card: 0.75rem;
@@ -11,14 +11,14 @@
   --gap-card-content: 4px;
 
   --card-width: min(90vw, 400px);
-  --card-radius: 5px;
+  --card-radius: 4.069px;
   --swatch-height: 0.5rem;
 
   --slider-height: 2rem;
   --thumb-size: 2rem;
 
   --color-bg: #f4f4f4;
-  --color-text: #111;
+  --color-text: #ffffff;
   --color-muted: #333;
   --color-white: #fff;
   --color-border: #e3e3e3;
@@ -43,26 +43,11 @@
 
 body {
   font-family: var(--font-main);
-  /* background: var(--color-bg); */
   color: var(--color-text);
   padding: var(--padding-body);
-  background: linear-gradient(106deg,#003973,#000000);
+  background: linear-gradient(106deg, #ff5770,#e4428d,#c42da8,#9e16c3,#6501de, #9e16c3, #c42da8,#e4428d, #ff5770);
   background-size: 120% 120%;
-  animation: gradient-animation 14s ease infinite;
 }
-  
-@keyframes body {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 
 main {
   display: flex;
@@ -74,18 +59,21 @@ main {
 .noise-control {
   width: var(--card-width);
   border-radius: var(--card-radius);
-  overflow: hidden;
+  border: 0.814px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0px 1px 15px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(18.8px);
+  -webkit-backdrop-filter: blur(18.8px);
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.09);
+  align-items: center;
+  align-self: stretch;
+  overflow: hidden;
 }
 
 .swatch {
   height: var(--swatch-height);
   width: 100%;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
   background: var(--swatch-color);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -95,12 +83,8 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: left;
   gap: var(--gap-card-content);
-  background: rgb(255, 255, 255);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
 }
 
 h2 {
@@ -118,16 +102,18 @@ h2 {
   width: 100%;
 }
 
-/* I wanted a colored slider for my interface. */
-/* I found this CodePen by Shashank: https://codepen.io/shashank_coder/pen/jOqxOpK */
-/* This slider uses a long box-shadow on the thumb to simulate a filled track */
+/* I wanted a colored slider with a frosted-glass feel. */
+/* Inspired by: https://codepen.io/shashank_coder/pen/jOqxOpK and modified to match blurred card design. */
 .range {
   width: 100%;
   height: var(--slider-height);
-  background: var(--color-border);
-  border-radius: calc(var(--slider-height) / 2);
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--slider-height);
   outline: none;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.904);
   color: var(--swatch-color);
 }
 
@@ -138,6 +124,22 @@ h2 {
   border-radius: 50%;
   cursor: pointer;
   border: 5px solid #ffffff;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: -415px 0 0 400px currentColor;
+  transition: background 0.2s ease;
+}
+
+.range::-webkit-slider-thumb:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.range::-moz-range-thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid #ffffff;
+  background: rgba(255, 255, 255, 0.7);
   box-shadow: -415px 0 0 400px currentColor;
 }
 
@@ -184,42 +186,12 @@ header button:hover {
   background: #005bb5;
 }
 
-
 @media (min-width: 900px) {
   :root {
-    --card-width: 15rem;
+    --card-width: min(90vw, 400px);
     --swatch-height: 12rem;
     --font-size-heading: 1.25rem;
     --font-size-label: 1.25rem;
     --padding-card: 1.2rem;
   }
-
-/* I wanted the noise cards to overlap and shift smoothly when hovered for a layered, dynamic feel. */
-/* I referenced this card stack animation pattern from CodePen: https://codepen.io/aaroniker/pen/ZEbqQwM */
-/* The effect uses negative margins to overlap cards and the general sibling selector (~) to shift later cards when one is hovered. */
-  /* main {
-    justify-content: flex-start;
-    gap: 0;
-    padding-left: 4rem;
-  }
-
-  .noise-control {
-    position: relative;
-    transition: transform 0.4s ease-out, left 0.4s ease-out;
-    margin-left: -3rem;
-    z-index: 1;
-  }
-
-  .noise-control:first-child {
-    margin-left: 0;
-  }
-
-  .noise-control:hover {
-    transform: translateY(-20px);
-    z-index: 10;
-  }
-
-  .noise-control:hover ~ .noise-control {
-    left: 3.5rem;
-  } */
 }
