@@ -10,11 +10,11 @@
   --gap-main: 1.5rem;
   --gap-card-content: 4px;
 
-  --card-width: 10rem;
+  --card-width: 20rem;
   --card-radius: 5px;
-  --swatch-height: 6rem;
+  --swatch-height: 1rem;
 
-  --slider-height: 10px;
+  --slider-height: 1rem;
   --thumb-size: 1rem;
 
   --color-bg: #f4f4f4;
