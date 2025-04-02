@@ -177,7 +177,7 @@ footer button:hover {
 @media (min-width: 600px) {
   :root {
     --card-width: 180px;
-    --swatch-height: 80px;
+    --swatch-height: 10rem;
     --font-size-heading: 1.1rem;
     --font-size-label: 1rem;
     --padding-card: 1rem;
@@ -187,7 +187,7 @@ footer button:hover {
 @media (min-width: 900px) {
   :root {
     --card-width: 220px;
-    --swatch-height: 100px;
+    --swatch-height: 15rem;
     --font-size-heading: 1.2rem;
     --font-size-label: 1.1rem;
     --padding-card: 1.2rem;
