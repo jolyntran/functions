@@ -12,10 +12,10 @@
 
   --card-width: 20rem;
   --card-radius: 5px;
-  --swatch-height: .75rem;
+  --swatch-height: 0.5rem;
 
-  --slider-height: 1rem;
-  --thumb-size: 1rem;
+  --slider-height: 1.5rem;
+  --thumb-size: 1.5rem;
 
   --color-bg: #f4f4f4;
   --color-text: #111;
@@ -138,7 +138,7 @@ h2 {
   border-radius: 50%;
   cursor: pointer;
   border: 5px solid #ffffff;
-  box-shadow: -405px 0 0 400px currentColor;
+  box-shadow: -410px 0 0 400px currentColor;
 }
 
 header {
@@ -175,7 +175,7 @@ header button {
   padding: 0.6rem 1.2rem;
   margin: 0.5rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s;
 }
