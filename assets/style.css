@@ -2,8 +2,8 @@
   --font-main: 'Onest', sans-serif;
 
   --font-size-base: 16px;
-  --font-size-heading: 10px;
-  --font-size-label: 10px;
+  --font-size-heading: 11px;
+  --font-size-label: 11px;
 
   --padding-body: 1rem;
   --padding-card: 0.75rem;
@@ -123,7 +123,7 @@ h2 {
   border-radius: 50%;
   cursor: pointer;
   border: 5px solid #ffffff;
-  box-shadow: -400px 0 0 400px currentColor;
+  box-shadow: -405px 0 0 400px currentColor;
 }
 
 header {
