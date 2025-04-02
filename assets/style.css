@@ -10,29 +10,29 @@
   --gap-main: 1rem;
   --gap-card-content: 4px;
 
-  --card-width: min(90vw, 400px);
-  --card-radius: 4.069px;
-  --swatch-height: 0.5rem;
+  --card-width: min(100vw, 400px);
+  --card-radius: 1rem;
+  --swatch-height: 0.75rem;
 
   --slider-height: 2rem;
   --thumb-size: 2rem;
 
-  --color-bg: #f4f4f4;
-  --color-text: #ffffff;
+  --color-bg: #154b74;
+  --color-text: #ffffffd7;
   --color-muted: #333;
   --color-white: #fff;
   --color-border: #e3e3e3;
 
-  --color-red: #f94144;
-  --color-orange: #f8961e;
-  --color-yellow: #f9c64f;
-  --color-green: #90be6d;
-  --color-blue: #598ab5;
-  --color-violet: #925cbf;
-  --color-pink: #ed8ceb;
-  --color-brown: #907457;
-  --color-gray: #999999;
-  --color-white-noise: #eeeeee;
+  --color-red: rgba(249, 67, 70);
+  --color-orange: rgba(248, 150, 30);
+  --color-yellow: rgba(249, 198, 79);
+  --color-green: rgba(144, 190, 109);
+  --color-blue: rgba(89, 138, 181);
+  --color-violet: rgba(146, 92, 191);
+  --color-pink: rgba(237, 140, 235);
+  --color-brown: rgba(144, 116, 87);
+  --color-gray: rgba(153, 153, 153);
+  --color-white-noise: rgba(238, 238, 238);
 }
 
 * {
@@ -42,11 +42,10 @@
 }
 
 body {
+  background-color: var(--color-bg);
   font-family: var(--font-main);
   color: var(--color-text);
   padding: var(--padding-body);
-  background: linear-gradient(106deg, #ff5770,#e4428d,#c42da8,#9e16c3,#6501de, #9e16c3, #c42da8,#e4428d, #ff5770);
-  background-size: 120% 120%;
 }
 
 main {
@@ -60,7 +59,7 @@ main {
   width: var(--card-width);
   border-radius: var(--card-radius);
   border: 0.814px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 1px 15px 1px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(18.8px);
   -webkit-backdrop-filter: blur(18.8px);
@@ -112,8 +111,7 @@ h2 {
   outline: none;
   overflow: hidden;
   backdrop-filter: blur(12px);
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.904);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
   color: var(--swatch-color);
 }
 
@@ -150,7 +148,7 @@ header {
 }
 
 header h2 {
-  color: var(--color-bg);
+  color: var(--color-white);
   font-size: calc(var(--font-size-heading) + 0.2rem);
   margin-bottom: 0.5rem;
 }
@@ -189,7 +187,7 @@ header button:hover {
 @media (min-width: 900px) {
   :root {
     --card-width: min(90vw, 400px);
-    --swatch-height: 12rem;
+    --swatch-height: 1rem;
     --font-size-heading: 1.25rem;
     --font-size-label: 1.25rem;
     --padding-card: 1.2rem;
