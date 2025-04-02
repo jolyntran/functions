@@ -9,6 +9,15 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 	</head>
+	<header>
+		<h2>Master Volume</h2>
+		<span id="masterVolumeDisplay">70</span>
+		<input type="range" min="0" max="100" value="70" id="masterVolume" class="range">
+		<div>
+			<button id="playBtn">Play</button>
+			<button id="stopBtn">Stop</button>
+		</div>
+	</header>
 	<body>
 		<main>
 			<section class="noise-control" data-noise="red" style="--swatch-color: var(--color-red);">
@@ -101,15 +110,5 @@
 				</div>
 			</section>
 		</main>
-
-		<footer>
-			<h2>Master Volume</h2>
-			<span id="masterVolumeDisplay">70</span>
-			<input type="range" min="0" max="100" value="70" id="masterVolume" class="range">
-			<div>
-				<button id="playBtn">Play</button>
-				<button id="stopBtn">Stop</button>
-			</div>
-		</footer>
 	</body>
 </html>

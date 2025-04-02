@@ -126,12 +126,13 @@ h2 {
   box-shadow: -400px 0 0 400px currentColor;
 }
 
-footer {
-  margin-top: 2rem;
+header {
+  margin-top: 2rem;  
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-footer h2 {
+header h2 {
   font-size: calc(var(--font-size-heading) + 0.2rem);
   margin-bottom: 0.5rem;
 }
@@ -151,7 +152,7 @@ footer h2 {
   color: var(--color-muted);
 }
 
-footer button {
+header button {
   background: #007aff;
   color: var(--color-white);
   font-size: var(--font-size-label);
@@ -163,7 +164,7 @@ footer button {
   transition: background 0.3s;
 }
 
-footer button:hover {
+header button:hover {
   background: #005bb5;
 }
 
