@@ -177,4 +177,33 @@ header button:hover {
     --font-size-label: 1.25rem;
     --padding-card: 1.2rem;
   }
+
+/* I wanted the noise cards to overlap and shift smoothly when hovered for a layered, dynamic feel. */
+/* I referenced this card stack animation pattern from CodePen: https://codepen.io/aaroniker/pen/ZEbqQwM */
+/* The effect uses negative margins to overlap cards and the general sibling selector (~) to shift later cards when one is hovered. */
+  /* main {
+    justify-content: flex-start;
+    gap: 0;
+    padding-left: 4rem;
+  }
+
+  .noise-control {
+    position: relative;
+    transition: transform 0.4s ease-out, left 0.4s ease-out;
+    margin-left: -3rem;
+    z-index: 1;
+  }
+
+  .noise-control:first-child {
+    margin-left: 0;
+  }
+
+  .noise-control:hover {
+    transform: translateY(-20px);
+    z-index: 10;
+  }
+
+  .noise-control:hover ~ .noise-control {
+    left: 3.5rem;
+  } */
 }
