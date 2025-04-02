@@ -11,7 +11,7 @@
   --gap-card-content: 4px;
 
   --card-width: 7rem;
-  --card-radius: 10px;
+  --card-radius: 5px;
   --swatch-height: 6rem;
 
   --slider-height: 10px;
@@ -173,23 +173,13 @@ footer button:hover {
   background: #005bb5;
 }
 
-/* Responsive adjustments */
-@media (min-width: 600px) {
-  :root {
-    --card-width: 180px;
-    --swatch-height: 10rem;
-    --font-size-heading: 1.1rem;
-    --font-size-label: 1rem;
-    --padding-card: 1rem;
-  }
-}
 
 @media (min-width: 900px) {
   :root {
-    --card-width: 220px;
-    --swatch-height: 15rem;
-    --font-size-heading: 1.2rem;
-    --font-size-label: 1.1rem;
+    --card-width: 15rem;
+    --swatch-height: 12rem;
+    --font-size-heading: 1.25rem;
+    --font-size-label: 1.25rem;
     --padding-card: 1.2rem;
   }
 }
