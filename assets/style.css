@@ -103,6 +103,9 @@ h2 {
   width: 100%;
 }
 
+/* I wanted a colored slider for my interface. */
+/* I found this CodePen by Shashank: https://codepen.io/shashank_coder/pen/jOqxOpK */
+/* This slider uses a long box-shadow on the thumb to simulate a filled track */
 .range {
   width: 100%;
   height: var(--slider-height);
@@ -115,15 +118,6 @@ h2 {
 
 .range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: var(--thumb-size);
-  height: var(--thumb-size);
-  border-radius: 50%;
-  cursor: pointer;
-  border: 5px solid #ffffff;
-  box-shadow: -400px 0 0 400px currentColor;
-}
-
-.range::-moz-range-thumb {
   width: var(--thumb-size);
   height: var(--thumb-size);
   border-radius: 50%;
