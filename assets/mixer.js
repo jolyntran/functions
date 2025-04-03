@@ -27,7 +27,7 @@ masterGainNode.connect(audioContext.destination);
 
 // I needed to set up each track with volume controls and connect them to the master gain node.
 // I used createMediaElementSource() to turn <audio> elements into nodes usable with Web Audio API.
-document.querySelectorAll(".noise-control").forEach((section) => {
+document.querySelectorAll(".noise-card").forEach((section) => {
   const color = section.dataset.noise;
   const slider = section.querySelector(".range");
   const display = section.querySelector(".volume-display");
@@ -43,7 +43,7 @@ document.querySelectorAll(".noise-control").forEach((section) => {
   const gainNode = audioContext.createGain();
   trackSource.connect(gainNode).connect(masterGainNode);
 
-  noisePlayers[color] = { audio, gainNode, slider };
+  noisePlayers[color] = { audio, gainNode, slider, display };
 
   // I wanted to allow users to control the volume of each noise track with a slider.
   // I used the input event to update the gain value and reflect it in the UI.
@@ -54,7 +54,7 @@ document.querySelectorAll(".noise-control").forEach((section) => {
   };
 
   slider.addEventListener("input", updateVolume);
-  updateVolume(); // Set initial volume state
+  updateVolume(); 
 });
 
 // I wanted to provide a global volume control for all noise tracks.
@@ -70,22 +70,49 @@ masterSlider.addEventListener("input", () => {
 
 // I needed a way to start all noise tracks together when the user clicks Play.
 // I used audioContext.resume() to satisfy browser autoplay policies, then played each track.
-document.getElementById("playBtn").addEventListener("click", async () => {
+const playBtn = document.getElementById("playBtn");
+
+playBtn.addEventListener("click", async () => {
+  await audioContext.resume();
+
   if (!isPlaying) {
-    await audioContext.resume();
+    // ▶ Play all
     Object.values(noisePlayers).forEach(({ audio }) => {
       audio.play();
     });
+    playBtn.textContent = "⏸"; // Switch to pause icon
     isPlaying = true;
+  } else {
+    // ⏸ Pause all
+    Object.values(noisePlayers).forEach(({ audio }) => {
+      audio.pause();
+    });
+    playBtn.textContent = "▶"; // Switch back to play icon
+    isPlaying = false;
   }
 });
 
 // I needed a way to stop and reset all noise tracks with one click.
 // I paused and reset currentTime on each track to return them to the beginning.
-document.getElementById("stopBtn").addEventListener("click", () => {
-  Object.values(noisePlayers).forEach(({ audio }) => {
+document.getElementById("resetBtn").addEventListener("click", () => {
+  Object.values(noisePlayers).forEach(({ audio, slider, gainNode, display }) => {
     audio.pause();
     audio.currentTime = 0;
+    slider.value = 50;
+    gainNode.gain.value = 0.5;
+    display.textContent = "50";
   });
+  masterSlider.value = 70;
+  masterGainNode.gain.value = 0.7;
+  masterDisplay.textContent = "70";
   isPlaying = false;
+});
+
+document.getElementById("randomizeBtn").addEventListener("click", () => {
+  Object.values(noisePlayers).forEach(({ slider, gainNode, display }) => {
+    const randomValue = Math.floor(Math.random() * 101);
+    slider.value = randomValue;
+    gainNode.gain.value = randomValue / 100;
+    display.textContent = randomValue;
+  });
 });
