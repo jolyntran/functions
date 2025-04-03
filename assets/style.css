@@ -114,7 +114,6 @@ header.instruction {
   padding: var(--padding-card);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
   text-align: left;
 }
 
