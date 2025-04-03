@@ -7,7 +7,7 @@ const noiseTracks = {
   violet: ["assets/sounds/violet.mp3"],
   pink: ["assets/sounds/pink.mp3"],
   brown: ["assets/sounds/brown.mp3"],
-  gray: ["assets/sounds/gray.mp3"],
+  grey: ["assets/sounds/grey.mp3"],
   white: ["assets/sounds/white.mp3"]
 };
 
