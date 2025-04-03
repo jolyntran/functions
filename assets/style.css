@@ -209,8 +209,8 @@ header button:hover {
 
 @media (min-width: 900px) {
   :root {
-    --card-width: min(90vw, 400px);
-    --swatch-height: 1rem;
+    --card-width: 25rem;
+    --swatch-height: 17rem;
     --font-size-heading: 1.25rem;
     --font-size-label: 1.25rem;
     --padding-card: 1.2rem;
