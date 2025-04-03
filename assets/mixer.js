@@ -76,18 +76,16 @@ playBtn.addEventListener("click", async () => {
   await audioContext.resume();
 
   if (!isPlaying) {
-    // ▶ Play all
     Object.values(noisePlayers).forEach(({ audio }) => {
       audio.play();
     });
-    playBtn.textContent = "⏸"; // Switch to pause icon
+    playBtn.textContent = "⏸"; 
     isPlaying = true;
   } else {
-    // ⏸ Pause all
     Object.values(noisePlayers).forEach(({ audio }) => {
       audio.pause();
     });
-    playBtn.textContent = "▶"; // Switch back to play icon
+    playBtn.textContent = "▶"; 
     isPlaying = false;
   }
 });
