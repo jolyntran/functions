@@ -71,6 +71,7 @@ header.instruction {
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 2rem;
   padding: 3rem 4rem;
+  margin: 0;
 }
 
 .carousel::-webkit-scrollbar {
