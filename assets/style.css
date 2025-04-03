@@ -1,17 +1,17 @@
 :root {
   --font-main: 'Onest', sans-serif;
   --font-size-base: 1.25rem;
-  --font-size-heading: 2rem;
-  --font-size-label: 1.5rem;
+  --font-size-heading: 1.25rem;
+  --font-size-label: 1.25rem;
   --padding-body: .5rem;
   --padding-card: 1rem;
   --gap-main: 1rem;
   --gap-card-content: 1rem;
-  --card-width: 21rem;
+  --card-width: 16rem;
   --card-radius: 10px;
-  --swatch-height: 20rem;
-  --slider-height: 2rem;
-  --thumb-size: 3rem;
+  --swatch-height: 16rem;
+  --slider-height: 1.75rem;
+  --thumb-size: 2.25rem;
   --color-bg: #f2f2f2;
   --color-text: #151515;
   --color-muted: #333;
@@ -51,7 +51,6 @@ html, body {
 
 header.instruction {
   text-align: center;
-  padding: 1rem;
   font-size: 0.9rem;
   font-family: monospace;
   color: var(--color-muted);
@@ -92,7 +91,7 @@ header.instruction {
   transform-origin: center center;
   position: relative;
   z-index: 1;
-  transform: scale(0.70);
+  transform: scale(0.9);
   opacity: 0.7;
 }
 
