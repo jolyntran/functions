@@ -4,14 +4,14 @@
   --font-size-heading: 2rem;
   --font-size-label: 1.5rem;
   --padding-body: .5rem;
-  --padding-card: 0.75rem;
+  --padding-card: 1rem;
   --gap-main: 1rem;
-  --gap-card-content: 10px;
-  --card-width: 17rem;
+  --gap-card-content: 1rem;
+  --card-width: 20rem;
   --card-radius: 10px;
-  --swatch-height: 17rem;
-  --slider-height: 4rem;
-  --thumb-size: 4rem;
+  --swatch-height: 19rem;
+  --slider-height: 2rem;
+  --thumb-size: 3rem;
   --color-bg: #f2f2f2;
   --color-text: #151515;
   --color-muted: #333;
@@ -42,14 +42,14 @@ html, body {
   color: var(--color-text);
 }
 
-.app-container {
+.container {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden;
+  overflow: visible;
 }
 
-header.top-instruction {
+header.instruction {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
@@ -59,18 +59,27 @@ header.top-instruction {
 
 .carousel-wrapper {
   flex: 1;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  display: flex;
-  align-items: center;
-  padding: 1rem;
+  height: 100%;
+  padding: 6rem 0rem;
+  overflow: visible; 
+  position: relative;
 }
 
 .carousel {
   display: flex;
+  flex: 1;
+  height: 100%;
+  position: relative;
   gap: 1rem;
+  overflow-x: auto;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
-  scroll-padding-inline: 1rem;
+  scroll-padding-inline: 2rem;
+  padding-bottom: 1rem;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .noise-card {
@@ -82,11 +91,19 @@ header.top-instruction {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  transform-origin: center center;
+  position: relative;
+  z-index: 1;
+  transform: scale(0.85);
+  opacity: 0.7;
 }
 
 .noise-card.active {
-  transform: scale(1.5);
+  transform: scale(1);
+  z-index: 100;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  opacity: 1;
 }
 
 .swatch {
@@ -98,6 +115,9 @@ header.top-instruction {
 
 .controls {
   padding: var(--padding-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   text-align: left;
 }
 
@@ -117,6 +137,8 @@ header.top-instruction {
   height: var(--slider-height);
   border-radius: var(--slider-height);
   background: #f4f4f4;
+  position: relative;
+  overflow: visible;
   outline: none;
   -webkit-appearance: none;
   appearance: none;
@@ -160,16 +182,16 @@ header.top-instruction {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%; 
+  width: 100%;
 }
 
 .buttons button {
-  font-size: 1.5rem;
+  font-size: 2rem;
   background: #f4f4f4;
   border: none;
   border-radius: 100px;
   padding: 2.5rem 2rem;
-  height: 4rem; 
+  height: 4rem;
   box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;

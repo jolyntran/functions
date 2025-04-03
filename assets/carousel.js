@@ -1,25 +1,28 @@
-const carousel = document.querySelector('.carousel');
-let isScrolling;
+const carousel = document.querySelector(".carousel");
+  const cards = document.querySelectorAll(".noise-card");
 
-carousel.addEventListener('scroll', () => {
-  window.clearTimeout(isScrolling);
-  isScrolling = setTimeout(() => {
-    const cards = document.querySelectorAll('.noise-card');
+  function updateActiveCard() {
     const middle = window.innerWidth / 2;
     let closest = null;
-    let closestDist = Infinity;
+    let closestDistance = Infinity;
 
-    cards.forEach(card => {
-      const box = card.getBoundingClientRect();
-      const center = box.left + box.width / 2;
-      const dist = Math.abs(middle - center);
-      if (dist < closestDist) {
-        closestDist = dist;
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(middle - cardCenter);
+      if (distance < closestDistance) {
+        closestDistance = distance;
         closest = card;
       }
     });
 
-    cards.forEach(c => c.classList.remove('active'));
-    if (closest) closest.classList.add('active');
-  }, 150);
-});
+    cards.forEach((card) => card.classList.remove("active"));
+    if (closest) closest.classList.add("active");
+  }
+
+  carousel.addEventListener("scroll", () => {
+    requestAnimationFrame(updateActiveCard);
+  });
+
+  window.addEventListener("resize", updateActiveCard);
+  window.addEventListener("load", updateActiveCard);
