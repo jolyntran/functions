@@ -1,3 +1,4 @@
+/* ========== GENERAL RESET ========== */
 :root {
   --font-main: 'Onest', sans-serif;
   --font-size-base: 1.25rem;
@@ -40,6 +41,8 @@ html, body {
   color: var(--color-text);
 }
 
+/* ========== LAYOUT STRUCTURE ========== */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -52,44 +55,45 @@ header.instruction {
   font-size: 0.9rem;
   font-family: monospace;
   color: var(--color-muted);
-  padding: 3rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
 }
 
 .carousel-wrapper {
   flex: 1;
-  overflow: visible; 
+  overflow: hidden;
   position: relative;
 }
 
 .carousel {
   display: flex;
-  flex: 1;
-  position: relative;
   overflow-x: auto;
-  overflow-y: visible;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 2rem;
   padding: 3rem 4rem;
-  margin: 0;
+  gap: 2rem;
 }
 
 .carousel::-webkit-scrollbar {
   display: none;
 }
 
+/* ========== NOISE CARD & FLIP EFFECT ========== */
+
 .noise-card {
   flex: 0 0 var(--card-width);
+  height: 24rem;
   scroll-snap-align: center;
-  border-radius: var(--card-radius);
-  border: 2px var(--color-white) solid;
-  background: var(--color-white);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-  transform-origin: center center;
   position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  border-radius: var(--card-radius);
+  background: var(--color-white);
+  border: 2px solid var(--color-white);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform-origin: center center;
   z-index: 1;
   transform: scale(0.9);
   opacity: 0.7;
@@ -102,15 +106,60 @@ header.instruction {
   opacity: 1;
 }
 
+.noise-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.noise-card .front,
+.noise-card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--card-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--color-white);
+  transition: all 0.4s ease;
+}
+
+.noise-card .front {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  background: var(--color-white);
+  transition: all 0.4s ease;
+}
+
+.noise-card .back {
+  z-index: 1;
+  background: #f9f9f9;
+  padding: 1rem;
+  color: var(--color-muted);
+  font-size: var(--font-size-label);
+  line-height: 1.5;
+  transform: rotateY(180deg);
+  text-align: left;
+  justify-content: center;
+}
+
+/* ========== CARD CONTENT ========== */
+
 .swatch {
   height: var(--swatch-height);
   width: 100%;
   background: var(--swatch-color);
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .controls {
-  padding: var(--padding-card);
+  padding-top: var(--padding-card);
+  padding-left: var(--padding-card);
+  padding-right: var(--padding-card);
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -158,10 +207,12 @@ header.instruction {
   background: #f0f0f0;
 }
 
+/* ========== MASTER CONTROLS ========== */
+
 .master-controls {
   background: var(--color-white);
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
-  padding: 1rem 1rem 15rem 1rem;
+  padding: 1rem 1rem 10rem 1rem;
   border-radius: 1rem 1rem 0 0;
   display: flex;
   flex-direction: column;
@@ -188,7 +239,6 @@ header.instruction {
   border: none;
   border-radius: 100px;
   padding: 0.75rem 0.75rem;
-  /* height: 4rem; */
   box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -196,7 +246,6 @@ header.instruction {
   align-items: center;
   justify-content: center;
   fill: none;
-
 }
 
 #playBtn {

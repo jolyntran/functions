@@ -26,3 +26,15 @@ const carousel = document.querySelector(".carousel");
 
   window.addEventListener("resize", updateActiveCard);
   window.addEventListener("load", updateActiveCard);
+
+// I wanted to allow users to tap a card to flip it between control and description views.
+// Inspired by https://codepen.io/mondal10/pen/WNNEvjV 
+// I used classList.toggle to apply a CSS-based 3D rotation.
+document.querySelectorAll('.noise-card').forEach((card) => {
+  card.addEventListener('click', (e) => {
+    // Avoid flipping when a slider is clicked
+    if (!e.target.closest('input')) {
+      card.classList.toggle('flipped');
+    }
+  });
+});
