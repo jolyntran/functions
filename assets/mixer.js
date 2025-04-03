@@ -108,7 +108,6 @@ playBtn.addEventListener("click", async () => {
 // I also reset sliders and volumes to their default values.
 document.getElementById("resetBtn").addEventListener("click", () => {
   Object.values(noisePlayers).forEach(({ audio, slider, gainNode, display }) => {
-    audio.pause();
     audio.currentTime = 0;
     slider.value = 50;
     gainNode.gain.value = 0.5;
