@@ -8,17 +8,17 @@
   --padding-body: .5rem;
   --padding-card: 0.75rem;
   --gap-main: 1rem;
-  --gap-card-content: 4px;
+  --gap-card-content: 10px;
 
-  --card-width: min(100vw, 400px);
-  --card-radius: 1rem;
-  --swatch-height: 0.75rem;
+  --card-width: 200px;
+  --card-radius: .5rem;
+  --swatch-height: 12rem;
 
   --slider-height: 2rem;
   --thumb-size: 2rem;
 
   --color-bg: #154b74;
-  --color-text: #ffffffd7;
+  --color-text: #151515d7;
   --color-muted: #333;
   --color-white: #fff;
   --color-border: #e3e3e3;
@@ -48,18 +48,27 @@ body {
   padding: var(--padding-body);
 }
 
-main {
+main.carousel {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2rem;
+  padding-inline: 2rem; 
   gap: var(--gap-main);
+  padding-block: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+main.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .noise-control {
-  width: var(--card-width);
+  scroll-snap-align: center;
+  flex: 0 0 var(--card-width);
   border-radius: var(--card-radius);
   border: 0.814px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255);
   box-shadow: 0px 1px 15px 1px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(18.8px);
   -webkit-backdrop-filter: blur(18.8px);
@@ -68,6 +77,22 @@ main {
   align-items: center;
   align-self: stretch;
   overflow: hidden;
+  transform: scale(0.95);
+  opacity: 0.75;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.noise-control.active {
+  transform: scale(1.1);
+  opacity: 1;
+  z-index: 2;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+}
+
+.noise-control:last-child {
+  margin-right: 2rem;
 }
 
 .swatch {
@@ -101,8 +126,6 @@ h2 {
   width: 100%;
 }
 
-/* I wanted a colored slider with a frosted-glass feel. */
-/* Inspired by: https://codepen.io/shashank_coder/pen/jOqxOpK and modified to match blurred card design. */
 .range {
   width: 100%;
   height: var(--slider-height);
@@ -142,7 +165,7 @@ h2 {
 }
 
 header {
-  margin-top: 2rem;  
+  margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
 }

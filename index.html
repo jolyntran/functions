@@ -5,7 +5,7 @@
 		<link href="assets/reset.css" rel="stylesheet">
 		<link href="assets/style.css" rel="stylesheet">
 		<script defer src="assets/mixer.js"></script>
-		<script defer src="assets/gradient.js"></script>
+		<script defer src="assets/carousel.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
@@ -20,96 +20,98 @@
 		</div>
 	</header>
 	<body>
-		<main>
-			<section class="noise-control" data-noise="red" style="--swatch-color: var(--color-red);">
-				<div class="swatch"></div>
-				<div class="controls">
-					<h2>Red Noise</h2>
-					<span class="volume-display">50</span>
-					<input type="range" min="0" max="100" value="50" class="range">
-				</div>
-			</section>
+		<section class="carousel-wrapper">
+			<main class="carousel">
+				<section class="noise-control" data-noise="red" style="--swatch-color: var(--color-red);">
+					<div class="swatch"></div>
+					<div class="controls">
+						<h2>Red Noise</h2>
+						<span class="volume-display">50</span>
+						<input type="range" min="0" max="100" value="50" class="range">
+					</div>
+				</section>
 
-			<section class="noise-control" data-noise="orange" style="--swatch-color: var(--color-orange);">
-				<div class="swatch"></div>
-				<div class="controls">
-					<h2>Orange Noise</h2>
-					<span class="volume-display">50</span>
-					<input type="range" min="0" max="100" value="50" class="range">
-				</div>
-			</section>
+				<section class="noise-control" data-noise="orange" style="--swatch-color: var(--color-orange);">
+					<div class="swatch"></div>
+					<div class="controls">
+						<h2>Orange Noise</h2>
+						<span class="volume-display">50</span>
+						<input type="range" min="0" max="100" value="50" class="range">
+					</div>
+				</section>
 
-			<section class="noise-control" data-noise="yellow" style="--swatch-color: var(--color-yellow);">
-				<div class="swatch"></div>
-				<div class="controls">
-					<h2>Yellow Noise</h2>
-					<span class="volume-display">50</span>
-					<input type="range" min="0" max="100" value="0" class="range">
-				</div>
-			</section>
+				<section class="noise-control" data-noise="yellow" style="--swatch-color: var(--color-yellow);">
+					<div class="swatch"></div>
+					<div class="controls">
+						<h2>Yellow Noise</h2>
+						<span class="volume-display">50</span>
+						<input type="range" min="0" max="100" value="0" class="range">
+					</div>
+				</section>
 
-			<section class="noise-control" data-noise="green" style="--swatch-color: var(--color-green);">
-				<div class="swatch"></div>
-				<div class="controls">
-					<h2>Green Noise</h2>
-					<span class="volume-display">50</span>
-					<input type="range" min="0" max="100" value="0" class="range">
-				</div>
-			</section>
+				<section class="noise-control" data-noise="green" style="--swatch-color: var(--color-green);">
+					<div class="swatch"></div>
+					<div class="controls">
+						<h2>Green Noise</h2>
+						<span class="volume-display">50</span>
+						<input type="range" min="0" max="100" value="0" class="range">
+					</div>
+				</section>
 
-			<section class="noise-control" data-noise="blue" style="--swatch-color: var(--color-blue);">
-				<div class="swatch"></div>
-				<div class="controls">
-					<h2>Blue Noise</h2>
-					<span class="volume-display">50</span>
-					<input type="range" min="0" max="100" value="0" class="range">
-				</div>
-			</section>
+				<section class="noise-control" data-noise="blue" style="--swatch-color: var(--color-blue);">
+					<div class="swatch"></div>
+					<div class="controls">
+						<h2>Blue Noise</h2>
+						<span class="volume-display">50</span>
+						<input type="range" min="0" max="100" value="0" class="range">
+					</div>
+				</section>
 
-			<section class="noise-control" data-noise="violet" style="--swatch-color: var(--color-violet);">
-				<div class="swatch"></div>
-				<div class="controls">
-					<h2>Violet Noise</h2>
-					<span class="volume-display">50</span>
-					<input type="range" min="0" max="100" value="0" class="range">
-				</div>
-			</section>
+				<section class="noise-control" data-noise="violet" style="--swatch-color: var(--color-violet);">
+					<div class="swatch"></div>
+					<div class="controls">
+						<h2>Violet Noise</h2>
+						<span class="volume-display">50</span>
+						<input type="range" min="0" max="100" value="0" class="range">
+					</div>
+				</section>
 
-			<section class="noise-control" data-noise="pink" style="--swatch-color: var(--color-pink);">
-				<div class="swatch"></div>
-				<div class="controls">
-					<h2>Pink Noise</h2>
-					<span class="volume-display">50</span>
-					<input type="range" min="0" max="100" value="0" class="range">
-				</div>
-			</section>
+				<section class="noise-control" data-noise="pink" style="--swatch-color: var(--color-pink);">
+					<div class="swatch"></div>
+					<div class="controls">
+						<h2>Pink Noise</h2>
+						<span class="volume-display">50</span>
+						<input type="range" min="0" max="100" value="0" class="range">
+					</div>
+				</section>
 
-			<section class="noise-control" data-noise="brown" style="--swatch-color: var(--color-brown);">
-				<div class="swatch"></div>
-				<div class="controls">
-					<h2>Brown Noise</h2>
-					<span class="volume-display">50</span>
-					<input type="range" min="0" max="100" value="0" class="range">
-				</div>
-			</section>
+				<section class="noise-control" data-noise="brown" style="--swatch-color: var(--color-brown);">
+					<div class="swatch"></div>
+					<div class="controls">
+						<h2>Brown Noise</h2>
+						<span class="volume-display">50</span>
+						<input type="range" min="0" max="100" value="0" class="range">
+					</div>
+				</section>
 
-			<section class="noise-control" data-noise="gray" style="--swatch-color: var(--color-gray);">
-				<div class="swatch"></div>
-				<div class="controls">
-					<h2>Gray Noise</h2>
-					<span class="volume-display">50</span>
-					<input type="range" min="0" max="100" value="0" class="range">
-				</div>
-			</section>
+				<section class="noise-control" data-noise="gray" style="--swatch-color: var(--color-gray);">
+					<div class="swatch"></div>
+					<div class="controls">
+						<h2>Gray Noise</h2>
+						<span class="volume-display">50</span>
+						<input type="range" min="0" max="100" value="0" class="range">
+					</div>
+				</section>
 
-			<section class="noise-control" data-noise="white" style="--swatch-color: var(--color-white-noise);">
-				<div class="swatch"></div>
-				<div class="controls">
-					<h2>White Noise</h2>
-					<span class="volume-display">50</span>
-					<input type="range" min="0" max="100" value="0" class="range">
-				</div>
-			</section>
-		</main>
+				<section class="noise-control" data-noise="white" style="--swatch-color: var(--color-white-noise);">
+					<div class="swatch"></div>
+					<div class="controls">
+						<h2>White Noise</h2>
+						<span class="volume-display">50</span>
+						<input type="range" min="0" max="100" value="0" class="range">
+					</div>
+				</section>
+			</main>
+		</section>
 	</body>
 </html>
