@@ -1,15 +1,15 @@
 :root {
   --font-main: 'Onest', sans-serif;
-  --font-size-base: 16px;
-  --font-size-heading: 20px;
-  --font-size-label: 16px;
+  --font-size-base: 1.25rem;
+  --font-size-heading: 2rem;
+  --font-size-label: 1.5rem;
   --padding-body: .5rem;
   --padding-card: 0.75rem;
   --gap-main: 1rem;
   --gap-card-content: 10px;
-  --card-width: 15rem;
-  --card-radius: 5px;
-  --swatch-height: 200px;
+  --card-width: 17rem;
+  --card-radius: 10px;
+  --swatch-height: 17rem;
   --slider-height: 2rem;
   --thumb-size: 2rem;
   --color-bg: #f2f2f2;
@@ -86,7 +86,7 @@ header.top-instruction {
 }
 
 .noise-card.active {
-  transform: scale(1.03);
+  transform: scale(1.5);
 }
 
 .swatch {
@@ -153,26 +153,33 @@ header.top-instruction {
 
 #masterVolume {
   width: 100%;
-  max-width: 350px;
   margin-bottom: 1rem;
 }
 
 .buttons {
   display: flex;
-  gap: 1.5rem;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%; 
 }
 
 .buttons button {
   font-size: 1.5rem;
   background: #f4f4f4;
   border: none;
-  border-radius: 5px;
-  padding: 0.8rem 1.2rem;
+  border-radius: 100px;
+  padding: 2.5rem 2rem;
+  height: 4rem; 
   box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.buttons button:hover {
-  transform: scale(1.05);
+#playBtn {
+  width: 7rem;
+  height: 7rem;
+  font-size: 2rem;
 }
