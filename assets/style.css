@@ -138,7 +138,7 @@ header.instruction {
   background: #f9f9f9;
   padding: 1rem;
   color: var(--color-muted);
-  font-size: var(--font-size-label);
+  font-size: calc(0.85 * var(--font-size-label));
   line-height: 1.5;
   transform: rotateY(180deg);
   text-align: left;
@@ -205,6 +205,22 @@ header.instruction {
 
 .range::-webkit-slider-thumb:hover {
   background: #f0f0f0;
+}
+
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tags p{
+  font-size: calc(1.5* var(--padding-body));
+  font-family: monospace;
+  background: #eaeaea;
+  color: var(--color-muted);
+  border-radius: 2rem;
+  padding: 0.3rem 0.75rem;
 }
 
 /* ========== MASTER CONTROLS ========== */
