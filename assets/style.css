@@ -1,4 +1,3 @@
-/* ========== GENERAL RESET ========== */
 :root {
   --font-main: 'Onest', sans-serif;
   --font-size-base: 1.25rem;
@@ -79,6 +78,7 @@ header.instruction {
 }
 
 /* ========== NOISE CARD & FLIP EFFECT ========== */
+/* Inspired by https://codepen.io/mondal10/pen/WNNEvjV */
 
 .noise-card {
   flex: 0 0 var(--card-width);
