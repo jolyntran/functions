@@ -245,7 +245,7 @@ header.instruction {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
@@ -254,7 +254,7 @@ header.instruction {
   background: #f4f4f4;
   border: none;
   border-radius: 100px;
-  padding: 0.75rem 0.75rem;
+  padding: 0.95rem 0.95rem;
   box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
