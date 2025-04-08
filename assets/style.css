@@ -8,7 +8,7 @@
   --card-width: 16rem;
   --card-radius: 10px;
   --swatch-height: 16rem;
-  --slider-height: 1.75rem;
+  --slider-height: 1.5rem;
   --thumb-size: 2.25rem;
   --color-bg: #f2f2f2;
   --color-text: #151515;
@@ -40,7 +40,7 @@ html, body {
   color: var(--color-text);
 }
 
-/* ========== LAYOUT STRUCTURE ========== */
+/* LAYOUT STRUCTURE */
 
 .container {
   display: flex;
@@ -59,17 +59,17 @@ html, body {
 
 .carousel-wrapper {
   flex: 1;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
 }
 
 .carousel {
   display: flex;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 2rem;
-  padding: 1.25rem 5rem;
+  padding: 1rem 5rem;
   /* gap: 2rem; */
 }
 
@@ -77,9 +77,8 @@ html, body {
   display: none;
 }
 
-/* ========== NOISE CARD & FLIP EFFECT ========== */
+/* NOISE CARD & FLIP EFFECT */
 /* Inspired by https://codepen.io/mondal10/pen/WNNEvjV */
-
 .noise-card {
   flex: 0 0 var(--card-width);
   height: 24rem;
@@ -92,7 +91,7 @@ html, body {
   border-radius: var(--card-radius);
   background: var(--color-white);
   border: 2px solid var(--color-white);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transform-origin: center center;
   z-index: 1;
   transform: scale(0.9);
@@ -102,7 +101,7 @@ html, body {
 .noise-card.active {
   transform: scale(1);
   z-index: 100;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   opacity: 1;
 }
 
@@ -145,8 +144,7 @@ html, body {
   justify-content: center;
 }
 
-/* ========== CARD CONTENT ========== */
-
+/* CARD CONTENT */
 .swatch {
   height: var(--swatch-height);
   width: 100%;
@@ -156,16 +154,44 @@ html, body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-#red-noise { --swatch-color: var(--color-red); }
-#orange-noise { --swatch-color: var(--color-orange); }
-#yellow-noise { --swatch-color: var(--color-yellow); }
-#green-noise { --swatch-color: var(--color-green); }
-#blue-noise { --swatch-color: var(--color-blue); }
-#violet-noise { --swatch-color: var(--color-violet); }
-#pink-noise { --swatch-color: var(--color-pink); }
-#brown-noise { --swatch-color: var(--color-brown); }
-#grey-noise { --swatch-color: var(--color-grey); }
-#white-noise { --swatch-color: var(--color-white-noise); }
+#red-noise { 
+  --swatch-color: var(--color-red); 
+}
+
+#orange-noise {
+  --swatch-color: var(--color-orange); 
+}
+
+#yellow-noise { 
+  --swatch-color: var(--color-yellow); 
+}
+
+#green-noise { 
+  --swatch-color: var(--color-green); 
+}
+
+#blue-noise {
+  --swatch-color: var(--color-blue); 
+}
+
+#violet-noise { 
+  --swatch-color: var(--color-violet); 
+}
+
+#pink-noise { 
+  --swatch-color: var(--color-pink); 
+}
+#brown-noise { 
+  --swatch-color: var(--color-brown); 
+}
+
+#grey-noise { 
+  --swatch-color: var(--color-grey); 
+}
+
+#white-noise { 
+  --swatch-color: var(--color-white-noise); 
+}
 
 .controls {
   padding-top: var(--padding-card);
@@ -234,8 +260,34 @@ html, body {
   padding: 0.3rem 0.75rem;
 }
 
-/* ========== MASTER CONTROLS ========== */
+/* MENU NAVIGATION */
+#menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
 
+#menu li {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  background: var(--swatch-color);
+}
+
+#menu li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#menu {
+  padding-bottom: 1rem;
+}
+
+/* MASTER CONTROLS */
 .master-controls {
   background: var(--color-white);
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
