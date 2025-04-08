@@ -156,6 +156,17 @@ html, body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+#red-noise { --swatch-color: var(--color-red); }
+#orange-noise { --swatch-color: var(--color-orange); }
+#yellow-noise { --swatch-color: var(--color-yellow); }
+#green-noise { --swatch-color: var(--color-green); }
+#blue-noise { --swatch-color: var(--color-blue); }
+#violet-noise { --swatch-color: var(--color-violet); }
+#pink-noise { --swatch-color: var(--color-pink); }
+#brown-noise { --swatch-color: var(--color-brown); }
+#grey-noise { --swatch-color: var(--color-grey); }
+#white-noise { --swatch-color: var(--color-white-noise); }
+
 .controls {
   padding-top: var(--padding-card);
   padding-left: var(--padding-card);
