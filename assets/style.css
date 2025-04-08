@@ -49,9 +49,9 @@ html, body {
   overflow: visible;
 }
 
-header.instruction {
+.instruction {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-family: monospace;
   color: var(--color-muted);
   padding: 2rem 1rem 1rem 1rem;
