@@ -319,6 +319,11 @@ html, body {
   margin-bottom: 1rem;
 }
 
+button {
+  fill: none;
+  color: var(--color-grey);
+}
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -339,7 +344,6 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  fill: none;
 }
 
 #play {
@@ -360,10 +364,9 @@ html, body {
   align-items: center;
   gap: 0.5rem;
   font-family: monospace;
-  font-size: 0.5rem;
   font-weight: 500;
   padding: 1rem;
-  height: var(--slider-height);
+  height: calc(2 * var(--slider-height));
   border-radius: var(--slider-height);
   background: #f4f4f4;
   border: none;
@@ -387,10 +390,9 @@ html, body {
   display: flex;
   align-items: center;
   font-family: monospace;
-  font-size: 0.5rem;
   font-weight: 500;
   padding: 1rem;
-  height: var(--slider-height);
+  height: calc(2 * var(--slider-height));
   border-radius: var(--slider-height);  background: #f4f4f4;
   border: none;
   box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
