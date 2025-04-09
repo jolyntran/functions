@@ -287,6 +287,11 @@ html, body {
   padding-bottom: 1rem;
 }
 
+#white-noise a {
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+}
+
 /* MASTER CONTROLS */
 .master-controls {
   background: var(--color-white);
