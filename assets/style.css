@@ -346,3 +346,55 @@ html, body {
   width: 4rem;
   height: 4rem;
 }
+
+.utility-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.utility-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: monospace;
+  font-size: 0.5rem;
+  font-weight: 500;
+  padding: 1rem;
+  height: var(--slider-height);
+  border-radius: var(--slider-height);
+  background: #f4f4f4;
+  border: none;
+  box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
+  cursor: pointer;
+  width: 100%; 
+  justify-content: center;
+}
+
+.preset-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.preset-buttons button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  font-size: 0.5rem;
+  font-weight: 500;
+  padding: 1rem;
+  height: var(--slider-height);
+  border-radius: var(--slider-height);  background: #f4f4f4;
+  border: none;
+  box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  justify-content: center;
+}
