@@ -38,6 +38,7 @@ const pauseSVG = `<svg width="36px" height="36px" viewBox="0 0 24 24" fill="none
 
 // I needed to set up each track with volume controls and connect them to the master gain node.
 // I used createMediaElementSource() to turn <audio> elements into nodes usable with Web Audio API.
+// This allows each noise file to be processed independently and controlled in real-time.
 document.querySelectorAll(".noise-card").forEach((section) => {
   const color = section.dataset.noise;
   const slider = section.querySelector(".range");
@@ -82,23 +83,23 @@ masterSlider.addEventListener("input", () => {
 // I needed a way to start and pause all noise tracks with one button.
 // I used audioContext.resume() to satisfy autoplay policies, then toggled play and pause on click.
 // I swapped in a Play/Pause SVG by changing innerHTML.
-const playBtn = document.getElementById("playBtn");
-playBtn.innerHTML = playSVG; // Set initial SVG
+const play = document.getElementById("play");
+play.innerHTML = playSVG; // Set initial SVG
 
-playBtn.addEventListener("click", async () => {
+play.addEventListener("click", async () => {
   await audioContext.resume();
 
   if (!isPlaying) {
     Object.values(noisePlayers).forEach(({ audio }) => {
       audio.play();
     });
-    playBtn.innerHTML = pauseSVG;
+    play.innerHTML = pauseSVG;
     isPlaying = true;
   } else {
     Object.values(noisePlayers).forEach(({ audio }) => {
       audio.pause();
     });
-    playBtn.innerHTML = playSVG;
+    play.innerHTML = playSVG;
     isPlaying = false;
   }
 });
@@ -106,23 +107,33 @@ playBtn.addEventListener("click", async () => {
 // I needed a way to stop and reset all noise tracks with one click.
 // I paused and reset currentTime on each track to return them to the beginning.
 // I also reset sliders and volumes to their default values.
-document.getElementById("resetBtn").addEventListener("click", () => {
-  Object.values(noisePlayers).forEach(({ audio, slider, gainNode, display }) => {
+// Now, only red and orange are reset to 50, and the rest go to 0.
+document.getElementById("reset").addEventListener("click", () => {
+  Object.entries(noisePlayers).forEach(([color, { audio, slider, gainNode, display }]) => {
     audio.currentTime = 0;
-    slider.value = 50;
-    gainNode.gain.value = 0.5;
-    display.textContent = "50";
+
+    if (color === "red" || color === "orange") {
+      slider.value = 50;
+      gainNode.gain.value = 0.5;
+      display.textContent = "50";
+    } else {
+      slider.value = 0;
+      gainNode.gain.value = 0;
+      display.textContent = "0";
+    }
   });
-  masterSlider.value = 70;
-  masterGainNode.gain.value = 0.7;
-  masterDisplay.textContent = "70";
-  playBtn.innerHTML = playSVG;
+
+  masterSlider.value = 50;
+  masterGainNode.gain.value = 0.5;
+  masterDisplay.textContent = "50";
+
+  play.innerHTML = playSVG;
   isPlaying = false;
 });
 
 // I wanted to give users a quick way to explore by generating random volumes across all tracks.
 // I used Math.random() to set each track between 0 and 100 and updated the UI accordingly.
-document.getElementById("randomizeBtn").addEventListener("click", () => {
+document.getElementById("randomize").addEventListener("click", () => {
   Object.values(noisePlayers).forEach(({ slider, gainNode, display }) => {
     const randomValue = Math.floor(Math.random() * 101);
     slider.value = randomValue;
@@ -130,3 +141,16 @@ document.getElementById("randomizeBtn").addEventListener("click", () => {
     display.textContent = randomValue;
   });
 });
+
+// I wanted to adjust the volumes so they are all even before users can adjust the Web Player API//
+// Using Orange as a baseline//
+noisePlayers["red"].audio.volume = 0.5;
+noisePlayers["yellow"].audio.volume = 1;
+noisePlayers["yellow"].gainNode.gain.value = 1.5; 
+noisePlayers["green"].audio.volume = 0.5;
+noisePlayers["blue"].audio.volume = 0.5;
+noisePlayers["violet"].audio.volume = 0.5;
+noisePlayers["pink"].audio.volume = 0.25;
+noisePlayers["grey"].audio.volume = 1;
+noisePlayers["grey"].gainNode.gain.value = 1.25; 
+noisePlayers["white"].audio.volume = 0.25;
