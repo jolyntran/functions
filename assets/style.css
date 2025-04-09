@@ -229,9 +229,7 @@ html, body {
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  box-shadow:
-    inset 4px 4px 8px #d1d1d1,
-    inset -4px -4px 8px #ffffff;
+  box-shadow: inset 2px 2px 4px #d1d1d1, inset -2px -2px 4px #ffffff;
   cursor: pointer;
 }
 
@@ -343,7 +341,7 @@ button {
   border: none;
   border-radius: 100px;
   padding: 0.95rem 0.95rem;
-  box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
+  box-shadow: inset 2px 2px 4px #d1d1d1, inset -2px -2px 4px #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
