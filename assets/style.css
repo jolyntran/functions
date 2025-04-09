@@ -49,12 +49,18 @@ html, body {
   overflow: visible;
 }
 
+#help {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
 .instruction {
   text-align: center;
   font-size: 0.75rem;
   font-family: monospace;
   color: var(--color-muted);
-  padding: 2rem 1rem 1rem 1rem;
+  /* padding: 1rem 0rem; */
 }
 
 .carousel-wrapper {
