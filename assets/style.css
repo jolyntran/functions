@@ -332,9 +332,8 @@ button {
 
 .buttons {
   display: flex;
-  justify-content: center;
+  justify-content:space-between;
   align-items: center;
-  gap: 1.5rem;
   width: 100%;
 }
 
@@ -357,7 +356,12 @@ button {
   height: 4rem;
 }
 
-.utility-buttons {
+#presets, #sleep {
+  box-shadow: none;
+  background: none;
+}
+
+/* .utility-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -405,4 +409,4 @@ button {
   cursor: pointer;
   transition: background 0.2s ease;
   justify-content: center;
-}
+} */
