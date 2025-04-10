@@ -81,7 +81,8 @@ document.querySelectorAll('#menu li a').forEach((link) => {
     if (targetCard) {
       targetCard.scrollIntoView({
         behavior: 'smooth',
-        block: 'start', 
+        block: 'nearest', 
+        inline: 'start'
       });
     }
   });
