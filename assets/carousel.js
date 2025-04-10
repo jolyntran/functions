@@ -57,3 +57,16 @@ document.querySelectorAll('.noise-card').forEach((card) => {
     }
   });
 });
+
+// I wanted the first card (red-noise) to start flipped to reveal its description, then flip back to the front after 3 seconds.
+// Inspired by the use of setTimeout from MDN Docs https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+window.addEventListener('load', () => {
+  const redCard = document.querySelector('#red-noise');
+  if (!redCard) return;
+
+  redCard.classList.add('flipped');
+
+  setTimeout(() => {
+    redCard.classList.remove('flipped');
+  }, 3000);
+});
