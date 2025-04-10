@@ -55,6 +55,29 @@ html, body {
   padding: 1rem;
 }
 
+#help button {
+  cursor: pointer;
+}
+
+dialog {
+	color: white;
+	gap: calc(4 * var(--base));
+	inset: 0; 
+	&[open] { display: grid } 
+}
+
+.modal {
+	place-content: center; 
+	place-items: center; 
+}
+
+.close { background-color: tomato; } 
+
+::backdrop {
+	background-color: rgb(0 0 0 / 5%); 
+	backdrop-filter: blur(8px);
+}
+
 .instruction {
   text-align: center;
   font-size: 0.75rem;
