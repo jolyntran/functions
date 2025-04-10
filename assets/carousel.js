@@ -21,7 +21,7 @@ function updateActiveCard() {
     }
   });
 
-  // Mark the centered card as active
+  // Centered card as active
   cards.forEach((card) => card.classList.remove("active"));
   if (closest) closest.classList.add("active");
 
@@ -37,8 +37,7 @@ function updateActiveCard() {
 
 // I used scroll and resize listeners to trigger re-centering logic on interaction
 // requestAnimationFrame ensures smoother performance when syncing on scroll
-// Scroll animation optimization via requestAnimationFrame from MDN Docs
-// https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
+// Scroll animation optimization via requestAnimationFrame from MDN Docs https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
 carousel.addEventListener("scroll", () => {
   requestAnimationFrame(updateActiveCard);
 });
@@ -47,8 +46,7 @@ window.addEventListener("resize", updateActiveCard);
 window.addEventListener("load", updateActiveCard);
 
 // I allowed flipping cards to see either controls or description
-// Inspired by card flip animation techniques shared on CodePen
-// https://codepen.io/mondal10/pen/WNNEvjV
+// Inspired by card flip animation techniques shared on CodePen https://codepen.io/mondal10/pen/WNNEvjV
 document.querySelectorAll('.noise-card').forEach((card) => {
   card.addEventListener('click', (e) => {
     // Prevent flipping when interacting with a slider
