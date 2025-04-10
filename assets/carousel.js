@@ -70,3 +70,20 @@ window.addEventListener('load', () => {
     redCard.classList.remove('flipped');
   }, 3000);
 });
+
+// I wanted the in-page anchor menu to scroll the target card to the top, instead of letting iOS center it awkwardly.
+// I used scrollIntoView with alignment customization, inspired by: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
+document.querySelectorAll('#menu li a').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    const targetId = link.getAttribute('href').substring(1);
+    const targetCard = document.getElementById(targetId);
+    if (targetCard) {
+      targetCard.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start', 
+        inline: 'nearest'
+      });
+    }
+  });
+});
