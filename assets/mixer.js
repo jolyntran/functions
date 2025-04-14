@@ -142,8 +142,8 @@ document.getElementById("randomize").addEventListener("click", () => {
   });
 });
 
-// I wanted to adjust the volumes so they are all even before users can adjust the Web Player API//
-// Using Orange as a baseline//
+// I wanted to adjust the volumes so they are all even before users can adjust the Web Player API
+// Using Orange as a baseline
 noisePlayers["red"].audio.volume = 0.5;
 noisePlayers["yellow"].audio.volume = 1;
 noisePlayers["yellow"].gainNode.gain.value = 1.5; 
@@ -154,3 +154,19 @@ noisePlayers["pink"].audio.volume = 0.25;
 noisePlayers["grey"].audio.volume = 1;
 noisePlayers["grey"].gainNode.gain.value = 1.25; 
 noisePlayers["white"].audio.volume = 0.25;
+
+// Making sure the browser doesn't turn off after being inactive//
+// Took this from https://developer.chrome.com/blog/new-in-chrome-79/#wake-lock 
+// It requests a lock, and prevents the screen from dimming or the screensaver from kicking in. 
+let wakeLock = null;
+const requestWakeLock = async () => {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => {
+      console.log('Wake Lock was released');
+    });
+    console.log('Wake Lock is active');
+  } catch (err) {
+    console.error(`${err.name}, ${err.message}`);
+  }
+};
