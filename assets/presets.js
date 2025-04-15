@@ -7,15 +7,7 @@ document.getElementById("sleepy").addEventListener("click", () => {
 	  	brown: 46,
 	 	grey: 19,
 	};
-  
-	for (const [color, value] of Object.entries(presetValues)) {
-		const player = noisePlayers[color];
-		if (player) {
-			player.slider.value = value;
-			player.gainNode.gain.value = value / 100;
-			player.display.textContent = value;
-	  	}
-	}
+	applyPreset(presetValues);
 });
 
 //Rain Preset
@@ -26,15 +18,7 @@ document.getElementById("rain").addEventListener("click", () => {
 		blue: 35,
 		brown: 19,
 	};
-  
-	for (const [color, value] of Object.entries(presetValues)) {
-		const player = noisePlayers[color];
-		if (player) {
-			player.slider.value = value;
-			player.gainNode.gain.value = value / 100;
-			player.display.textContent = value;
-		}
-	}
+	applyPreset(presetValues);
 });
 
 //Study Preset
@@ -45,15 +29,7 @@ document.getElementById("study").addEventListener("click", () => {
 		pink: 13,
 		white: 50,
 	};
-  
-	for (const [color, value] of Object.entries(presetValues)) {
-		const player = noisePlayers[color];
-		if (player) {
-			player.slider.value = value;
-			player.gainNode.gain.value = value / 100;
-			player.display.textContent = value;
-		}
-	}
+	applyPreset(presetValues);
 });
 
 //Ocean Preset
@@ -65,35 +41,19 @@ document.getElementById("ocean").addEventListener("click", () => {
 		brown: 39,
 		grey: 16,
 	};
-  
-	for (const [color, value] of Object.entries(presetValues)) {
-		const player = noisePlayers[color];
-		if (player) {
-			player.slider.value = value;
-			player.gainNode.gain.value = value / 100;
-			player.display.textContent = value;
-	  	}
-	}
+	applyPreset(presetValues);
 });
 
 //Outdoors Preset
 document.getElementById("outdoors").addEventListener("click", () => {
 	const presetValues = {
-		red: 27,
+		red: 23,
 		orange: 87,
 		yellow: 11,
 		green: 62,
-		blue: 4
+		blue: 4,
 		violet: 5,
 		pink: 8,
 	};
-  
-	for (const [color, value] of Object.entries(presetValues)) {
-		const player = noisePlayers[color];
-		if (player) {
-			player.slider.value = value;
-			player.gainNode.gain.value = value / 100;
-			player.display.textContent = value;
-		}
-	}
+	applyPreset(presetValues);
 });

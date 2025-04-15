@@ -117,6 +117,37 @@ play.addEventListener("click", async () => {
   }
 });
 
+function applyPreset(presetValues) {
+	Object.values(noisePlayers).forEach(({ slider, gainNode, display, audio }) => {
+		audio.pause();
+		audio.currentTime = 0;
+		slider.value = 0;
+		gainNode.gain.value = 0;
+		display.textContent = "0";
+	});
+
+	for (const [color, value] of Object.entries(presetValues)) {
+		const player = noisePlayers[color];
+		if (player) {
+			player.slider.value = value;
+			player.gainNode.gain.value = value / 100;
+			player.display.textContent = value;
+		}
+	}
+
+	audioContext.resume();
+
+	Object.values(noisePlayers).forEach(({ slider, audio }) => {
+		if (parseInt(slider.value) > 0) {
+			audio.play();
+		}
+	});
+
+	isPlaying = true;
+	play.innerHTML = pauseSVG;
+}
+
+
 // I needed a way to stop and reset all noise tracks with one click.
 // I paused and reset currentTime on each track to return them to the beginning.
 // I also reset sliders and volumes to their default values.
