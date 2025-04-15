@@ -59,11 +59,11 @@ document.getElementById("study").addEventListener("click", () => {
 //Ocean Preset
 document.getElementById("ocean").addEventListener("click", () => {
 	const presetValues = {
-		red: 27,
-		violet: 13,
-		pink: 17,
-		brown: 46,
-		grey: 19,
+		red: 62,
+		blue: 13,
+		pink: 21,
+		brown: 39,
+		grey: 16,
 	};
   
 	for (const [color, value] of Object.entries(presetValues)) {
@@ -80,10 +80,12 @@ document.getElementById("ocean").addEventListener("click", () => {
 document.getElementById("outdoors").addEventListener("click", () => {
 	const presetValues = {
 		red: 27,
-		violet: 13,
-		pink: 17,
-		brown: 46,
-		grey: 19,
+		orange: 87,
+		yellow: 11,
+		green: 62,
+		blue: 4
+		violet: 5,
+		pink: 8,
 	};
   
 	for (const [color, value] of Object.entries(presetValues)) {
