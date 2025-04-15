@@ -482,16 +482,23 @@ button {
   color: var(--color-muted);
 }
 
-.presets {
+#presets-drawer .presets {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.preset {
+#presets-drawer .preset {
   background: #f4f4f4;
   border-radius: var(--slider-height);
   padding: 0.75rem;
   box-shadow: inset 2px 2px 4px #d1d1d1, inset -2px -2px 4px #ffffff;
   cursor: pointer;
+}
+
+#sleep-timer-drawer .timer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
 }
