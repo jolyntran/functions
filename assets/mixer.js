@@ -170,3 +170,17 @@ const requestWakeLock = async () => {
     console.error(`${err.name}, ${err.message}`);
   }
 };
+
+// I wanted menu dots to pulse when their associated noise is playing (volume > 0). 
+// I used requestAnimationFrame to continuously check gain values and toggle a .pulsing class. 
+// Inspired by CodePen pulse animation from https://codepen.io/vram1980/pen/oNvWdO
+function updateDotPulse() {
+  Object.entries(noisePlayers).forEach(([color, { gainNode }]) => {
+    const dot = document.querySelector(`#menu li#${color}-noise`);
+    if (!dot) return;
+    const isAudible = parseInt(noisePlayers[color].slider.value) > 0;
+    dot.classList.toggle('pulsing', isAudible);
+  });
+  requestAnimationFrame(updateDotPulse); 
+}
+requestAnimationFrame(updateDotPulse);
