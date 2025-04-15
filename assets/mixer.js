@@ -11,6 +11,19 @@ const noiseTracks = {
   white: ["assets/sounds/white.mp3"]
 };
 
+// // I wanted to adjust the volumes so they are all even before users can adjust the Web Player API
+// // Using Orange as a baseline
+// noisePlayers["red"].audio.volume = 0.5;
+// noisePlayers["yellow"].audio.volume = 1;
+// noisePlayers["yellow"].gainNode.gain.value = 1.5; 
+// noisePlayers["green"].audio.volume = 0.5;
+// noisePlayers["blue"].audio.volume = 0.5;
+// noisePlayers["violet"].audio.volume = 0.5;
+// noisePlayers["pink"].audio.volume = 0.25;
+// noisePlayers["grey"].audio.volume = 1;
+// noisePlayers["grey"].gainNode.gain.value = 1.25; 
+// noisePlayers["white"].audio.volume = 0.25;
+
 // I needed a way to programmatically route and control audio playback for each noise color.
 // I learned from MDN: https://developer.mozilla.org/en-US/docs/Web/API/AudioContext
 // The AudioContext interface allows you to control audio operations like playback, gain, routing, and filters.
@@ -111,16 +124,10 @@ play.addEventListener("click", async () => {
 document.getElementById("reset").addEventListener("click", () => {
   Object.entries(noisePlayers).forEach(([color, { audio, slider, gainNode, display }]) => {
     audio.currentTime = 0;
-
-    if (color === "red" || color === "orange") {
-      slider.value = 50;
-      gainNode.gain.value = 0.5;
-      display.textContent = "50";
-    } else {
-      slider.value = 0;
-      gainNode.gain.value = 0;
-      display.textContent = "0";
-    }
+    slider.value = 0;
+    gainNode.gain.value = 0;
+    display.textContent = "0";
+    
   });
 
   masterSlider.value = 50;
@@ -141,19 +148,6 @@ document.getElementById("randomize").addEventListener("click", () => {
     display.textContent = randomValue;
   });
 });
-
-// I wanted to adjust the volumes so they are all even before users can adjust the Web Player API
-// Using Orange as a baseline
-noisePlayers["red"].audio.volume = 0.5;
-noisePlayers["yellow"].audio.volume = 1;
-noisePlayers["yellow"].gainNode.gain.value = 1.5; 
-noisePlayers["green"].audio.volume = 0.5;
-noisePlayers["blue"].audio.volume = 0.5;
-noisePlayers["violet"].audio.volume = 0.5;
-noisePlayers["pink"].audio.volume = 0.25;
-noisePlayers["grey"].audio.volume = 1;
-noisePlayers["grey"].gainNode.gain.value = 1.25; 
-noisePlayers["white"].audio.volume = 0.25;
 
 // Making sure the browser doesn't turn off after being inactive//
 // Took this from https://developer.chrome.com/blog/new-in-chrome-79/#wake-lock 

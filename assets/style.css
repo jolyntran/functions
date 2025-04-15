@@ -324,16 +324,13 @@ svg {
 .arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   z-index: 1000;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
-  background: #f4f4f4;
-  border: none;
+  background: var(--color-bg);
   border-radius: 50%;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: background 0.2s ease;
 }
 
 .arrow:hover {
@@ -459,52 +456,42 @@ button {
   background: none;
 }
 
-/* .utility-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* PRESETS */
+.top-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding-top: 1rem;
-}
-
-.utility-buttons button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: monospace;
-  font-weight: 500;
+  background: var(--color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
   padding: 1rem;
-  height: calc(2 * var(--slider-height));
-  border-radius: var(--slider-height);
-  background: #f4f4f4;
-  border: none;
-  box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
-  cursor: pointer;
-  width: 100%; 
-  justify-content: center;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.preset-buttons {
+.top-drawer.visible {
+  transform: translateY(0);
+}
+
+.top-drawer h2 {
+  font-family: monospace;
+  font-size: var(--base);
+  margin-bottom: 0.75rem;
+  color: var(--color-muted);
+}
+
+.presets {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  width: 100%;
-  padding-top: 1rem;
 }
 
-.preset-buttons button {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  font-family: monospace;
-  font-weight: 500;
-  padding: 1rem;
-  height: calc(2 * var(--slider-height));
-  border-radius: var(--slider-height);  background: #f4f4f4;
-  border: none;
-  box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
+.preset {
+  background: #f4f4f4;
+  border-radius: var(--slider-height);
+  padding: 0.75rem;
+  box-shadow: inset 2px 2px 4px #d1d1d1, inset -2px -2px 4px #ffffff;
   cursor: pointer;
-  transition: background 0.2s ease;
-  justify-content: center;
-} */
+}
