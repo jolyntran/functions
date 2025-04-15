@@ -320,6 +320,34 @@ svg {
   padding: 0.3rem 0.75rem;
 }
 
+/* RIGHT AND LEFT ARROW */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: #f4f4f4;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.arrow:hover {
+  background: #e0e0e0;
+}
+
+.arrow.left {
+  left: 1rem;
+}
+
+.arrow.right {
+  right: 1rem;
+}
+
 /* MENU NAVIGATION */
 #menu ul {
   display: flex;
