@@ -1,6 +1,6 @@
 :root {
   --font-main: "Onest", sans-serif;
-  --font-size-base: 1.25rem;
+  --font-size-base: 1rem;
   --font-size-heading: 1.25rem;
   --font-size-label: 1.25rem;
   --padding-body: 0.5rem;
@@ -493,7 +493,7 @@ button {
   font-size: var(--base);
   background: #f4f4f4;
   border-radius: var(--card-radius);
-  padding: 1rem 1.25rem;
+  padding: 1rem;
   box-shadow: inset 2px 2px 4px #d1d1d1, inset -2px -2px 4px #ffffff;
   cursor: pointer;
   display: flex;
@@ -503,15 +503,15 @@ button {
   text-align: center;
 }
 
-.timer-btn h3 {
-  font-size: calc( 2 * var(--base));
-  font-weight: 800;
-}
-
 .timer-btn p {
   font-size: var(--base);
   margin: 0;
   font-weight: 600;
+}
+
+.timer-btn h3 {
+  font-size: var(--font-size-heading);
+  font-weight: 800;
 }
 
 #timer-status {

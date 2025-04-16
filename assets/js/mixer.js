@@ -1,14 +1,14 @@
 const noiseTracks = {
-  red: ["assets/sounds/red.mp3"],
-  orange: ["assets/sounds/orange.mp3"],
-  yellow: ["assets/sounds/yellow.mp3"],
-  green: ["assets/sounds/green.mp3"],
-  blue: ["assets/sounds/blue.mp3"],
-  violet: ["assets/sounds/violet.mp3"],
-  pink: ["assets/sounds/pink.mp3"],
-  brown: ["assets/sounds/brown.mp3"],
-  grey: ["assets/sounds/grey.mp3"],
-  white: ["assets/sounds/white.mp3"]
+  red: ["sounds/red.mp3"],
+  orange: ["sounds/orange.mp3"],
+  yellow: ["sounds/yellow.mp3"],
+  green: ["sounds/green.mp3"],
+  blue: ["sounds/blue.mp3"],
+  violet: ["sounds/violet.mp3"],
+  pink: ["sounds/pink.mp3"],
+  brown: ["sounds/brown.mp3"],
+  grey: ["sounds/grey.mp3"],
+  white: ["sounds/white.mp3"]
 };
 
 // // I wanted to adjust the volumes so they are all even before users can adjust the Web Player API
