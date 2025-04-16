@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   presetsButton.addEventListener("click", () => {
     presetsDrawer.classList.toggle("visible");
-    sleepDrawer.classList.remove("visible"); // hide the other one
+    sleepDrawer.classList.remove("visible"); 
   });
 });
 
@@ -37,6 +37,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   sleepButton.addEventListener("click", () => {
     sleepDrawer.classList.toggle("visible");
-    presetsDrawer.classList.remove("visible"); // hide the other one
+    presetsDrawer.classList.remove("visible"); 
   });
 });
