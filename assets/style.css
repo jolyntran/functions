@@ -504,7 +504,7 @@ button {
 }
 
 .timer-btn h3 {
-  font-size: var(--font-size-heading);
+  font-size: calc( 2 * var(--base));
   font-weight: 800;
 }
 
