@@ -1,14 +1,14 @@
 const noiseTracks = {
-  red: ["sounds/red.mp3"],
-  orange: ["sounds/orange.mp3"],
-  yellow: ["sounds/yellow.mp3"],
-  green: ["sounds/green.mp3"],
-  blue: ["sounds/blue.mp3"],
-  violet: ["sounds/violet.mp3"],
-  pink: ["sounds/pink.mp3"],
-  brown: ["sounds/brown.mp3"],
-  grey: ["sounds/grey.mp3"],
-  white: ["sounds/white.mp3"]
+  red: ["assets/sounds/red.mp3"],
+  orange: ["assets/sounds/orange.mp3"],
+  yellow: ["assets/sounds/yellow.mp3"],
+  green: ["assets/sounds/green.mp3"],
+  blue: ["assets/sounds/blue.mp3"],
+  violet: ["assets/sounds/violet.mp3"],
+  pink: ["assets/sounds/pink.mp3"],
+  brown: ["assets/sounds/brown.mp3"],
+  grey: ["assets/sounds/grey.mp3"],
+  white: ["assets/sounds/white.mp3"]
 };
 
 // // I wanted to adjust the volumes so they are all even before users can adjust the Web Player API
@@ -85,7 +85,6 @@ document.querySelectorAll(".noise-card").forEach((section) => {
 // I wanted to provide a global volume control for all noise tracks.
 // I connected the master volume slider to the masterGainNode’s value.
 const masterSlider = document.getElementById("masterVolume");
-const masterDisplay = document.getElementById("masterVolumeDisplay");
 
 masterSlider.addEventListener("input", () => {
   const volume = masterSlider.value;
@@ -163,8 +162,6 @@ document.getElementById("reset").addEventListener("click", () => {
 
   masterSlider.value = 50;
   masterGainNode.gain.value = 0.5;
-  masterDisplay.textContent = "50";
-
   play.innerHTML = playSVG;
   isPlaying = false;
 });

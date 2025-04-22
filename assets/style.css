@@ -408,7 +408,6 @@ svg {
 /* MASTER CONTROLS */
 .master-controls {
   background: var(--color-white);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
@@ -484,7 +483,7 @@ button {
 }
 
 .drawer.drawer-open .master-controls {
-  transform: translateY(-12rem); 
+  transform: translateY(-9rem); 
   transition: transform 0.3s ease;
 }
 
