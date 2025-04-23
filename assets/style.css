@@ -41,6 +41,7 @@ html, body {
   font-family: var(--font-main);
   background: var(--color-bg);
   color: var(--color-text);
+  overflow-x: hidden;
 }
 
 /* LAYOUT STRUCTURE */
@@ -48,6 +49,7 @@ html, body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
   padding-bottom: 0;
 }
@@ -480,6 +482,11 @@ button {
   background: none;
 }
 
+.drawer, .mixer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* PRESETS */
 .bottom-drawer {
   position: fixed;
@@ -566,20 +573,27 @@ button {
     display: flex;
     flex-direction: row;
     height: 100vh;
-    padding: 0 1rem;  
     overflow: hidden;
   }
 
   .carousel-wrapper {
-    flex: 1;
-    order: 2;
-    padding-right: 1rem;
+    flex-grow: 1;
+    order: 1;
     height: 100vh;
     overflow-y: auto;
+    width: 100%;  
+  }
+
+  .noise-card {
+    height: 24rem;
+  }
+
+  .swatch {
+    height: var(--swatch-height);
   }
 
   .drawer {
-    order: 1;
+    order: 2;
     width: 350px;  
     height: 100vh;
     display: flex;
@@ -637,13 +651,10 @@ button {
   .buttons {
     justify-content: space-evenly;
   }
+  
   .carousel {
     padding: var(--padding-card) 2rem;
     scroll-padding-inline: 2rem;
-  }
-
-  .noise-card {
-    height: 28rem;
   }
 
   .arrow.left {
