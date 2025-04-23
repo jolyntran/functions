@@ -72,9 +72,12 @@ dialog {
 .modal {
   place-content: center;
   place-items: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background-color: var(--color-bg);
   border-radius: var(--card-radius);
-  font-size: calc(0.875 * var(--font-size-base));
+  font-size: calc(0.8 * var(--font-size-base));
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
