@@ -422,7 +422,7 @@ svg {
   }
 }
 
-.pulsing {
+#menu li.pulsing {
   animation: pulse 1s infinite;
 }
 
@@ -786,7 +786,7 @@ button {
     --padding-card: 2rem;
     --card-width: 30rem;
     --card-radius: 16px;
-    --swatch-height: 18rem;
+    --swatch-height: 20rem;
     --slider-height: 1.7rem;
     --thumb-size: 3.5rem;
   }
@@ -806,11 +806,11 @@ button {
   }
 
   .noise-card {
-    height: 25rem;
+    height: 28rem;
   }
 
   .swatch {
-    height: 16rem;
+    height: 19rem;
   }
 
   .drawer {
