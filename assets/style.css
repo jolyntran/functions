@@ -6,9 +6,9 @@
   --font-size-label: 1.25rem;
   --padding-body: 0.5rem;
   --padding-card: 1rem;
-  --card-width: 17rem;
+  --card-width: 16rem;
   --card-radius: 10px;
-  --swatch-height: 16rem;
+  --swatch-height: 15rem;
   --slider-height: 1.2rem;
   --thumb-size: 2.25rem;
 
@@ -165,7 +165,8 @@ svg {
 /* NOISE CARD & FLIP EFFECT */
 .noise-card {
   flex: 0 0 var(--card-width);
-  height: 24rem;
+  display: flex;
+  height: 22rem;
   scroll-snap-align: center;
   position: relative;
   perspective: 1000px;
@@ -672,110 +673,6 @@ button {
   }
 }
 
-@media (min-width: 850px) and (max-width: 991px) {
-  :root {
-    --font-size-base: 1.2rem;
-    --font-size-heading: 1.5rem;
-    --font-size-label: 1.5rem;
-    --padding-body: 1rem;
-    --padding-card: 1.5rem;
-    --card-width: 25rem;
-    --card-radius: 14px;
-    --swatch-height: 20rem;
-    --slider-height: 1.5rem;
-    --thumb-size: 3rem;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .carousel-wrapper {
-    flex-grow: 1;
-    order: 1;
-    overflow-y: auto;
-    width: 100%;  
-  }
-
-  .noise-card {
-    height: 26rem;
-    flex: 0 0 var(--card-width);
-  }
-
-  .swatch {
-    height: var(--swatch-height);
-  }
-
-  .drawer {
-    order: 2;
-    width: 375px;
-    height: 100vh;
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    background: var(--color-white);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .master-controls {
-    position: static;
-    width: 100%;
-    order: 2;
-    box-shadow: none;
-    border-top: 1px solid var(--color-border);
-    margin-top: auto;
-  }
-
-  .bottom-drawer {
-    position: static;
-    transform: none;
-    order: 1;
-    flex: 1;
-    overflow-y: auto;
-    box-shadow: none;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .bottom-drawer.visible {
-    transform: none;
-  }
-
-  #presets-drawer .presets {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  #presets-drawer .preset {
-    width: calc(50% - 0.5rem);
-  }
-
-  .timer-options {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .timer-btn {
-    width: calc(50% - 0.5rem);
-  }
-
-  #presets, #sleep {
-    display: none;
-  }
-
-  .buttons {
-    justify-content: space-evenly;
-  }
-
-  .carousel {
-    padding: var(--padding-card) 15rem;
-    scroll-padding-inline: 2rem;
-    margin-top: 2.5rem;
-  }
-}
-
 @media (min-width: 992px) and (max-width: 1100px) {
   :root {
     --font-size-base: 1.25rem;
@@ -889,7 +786,7 @@ button {
     --padding-card: 2rem;
     --card-width: 30rem;
     --card-radius: 16px;
-    --swatch-height: 24rem;
+    --swatch-height: 20rem;
     --slider-height: 1.7rem;
     --thumb-size: 3.5rem;
   }
@@ -910,11 +807,10 @@ button {
 
   .noise-card {
     height: 28rem;
-    flex: 0 0 var(--card-width);
   }
 
   .swatch {
-    height: var(--swatch-height);
+    height: 19rem;
   }
 
   .drawer {
