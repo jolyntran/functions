@@ -561,8 +561,6 @@ button {
   text-align: center;
 }
 
-/* Mobile-first layout (already defined) */
-
 @media (min-width: 768px) {
   .container {
     display: flex;
