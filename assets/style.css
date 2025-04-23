@@ -414,7 +414,6 @@ svg {
   align-items: center;
   z-index: 1000;
   position: relative;
-  /* margin-bottom: -rem; */
 }
 
 #masterVolume {
