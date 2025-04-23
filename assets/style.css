@@ -84,6 +84,7 @@ dialog {
 .modal h1 {
   font-family: monospace;
   padding-bottom: var(--padding-card);
+  font-size: calc(0.7 * var(--font-size-base));
 }
 
 .modal p {
@@ -101,12 +102,12 @@ svg {
 }
 
 .close {
-  background-color: #f4f4f4;
+  background-color: #f5f5f5;
   padding: var(--padding-card);
   box-shadow: inset 2px 2px 4px #d1d1d1, inset -2px -2px 4px #ffffff;
   border-radius: calc(3 * var(--card-radius));
   font-family: monospace;
-  font-size: calc(0.75 * var(--font-size-base));
+  font-size: calc(0.7 * var(--font-size-base));
 }
 
 ::backdrop {
