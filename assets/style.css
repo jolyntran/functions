@@ -490,7 +490,7 @@ button {
 /* PRESETS */
 .bottom-drawer {
   position: fixed;
-  bottom: 7rem;
+  bottom: 7.5rem;
   left: 0;
   width: 100%;
   background: var(--color-white);
@@ -909,7 +909,7 @@ button {
   }
 
   .noise-card {
-    height: 25rem;
+    height: 28rem;
     flex: 0 0 var(--card-width);
   }
 
