@@ -1,5 +1,7 @@
 :root {
   --font-main: "Onest", sans-serif;
+
+
   --font-size-base: 1rem;
   --font-size-heading: 1.25rem;
   --font-size-label: 1.25rem;
@@ -10,11 +12,15 @@
   --swatch-height: 16rem;
   --slider-height: 1.2rem;
   --thumb-size: 2.25rem;
+
+
   --color-bg: #f2f2f2;
   --color-text: #383838;
   --color-muted: #333;
   --color-white: #fff;
   --color-border: #e3e3e3;
+
+  
   --color-red: #f94144;
   --color-orange: #f8961e;
   --color-yellow: #f9c64f;
@@ -24,6 +30,7 @@
   --color-pink: #ed8ceb;
   --color-brown: #907457;
   --color-grey: #999999;
+  --color-white-noise: #f4f4f4; 
 }
 
 * {
