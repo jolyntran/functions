@@ -384,6 +384,22 @@ svg {
   outline-offset: 2px;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulsing {
+  animation: pulse 1s infinite;
+}
+
 /* MASTER CONTROLS */
 .master-controls {
   background: var(--color-white);
@@ -467,7 +483,7 @@ button {
 
 .bottom-drawer h2 {
   font-family: monospace;
-  font-size: var(--font-size-base);
+  font-size: calc(0.75 * var(--font-size-base));
   margin-bottom: 0.75rem;
   color: var(--color-muted);
 }
@@ -493,15 +509,10 @@ button {
   text-align: center;
 }
 
-.timer-btn p {
+.timer-btn p h3{
   font-size: var(--font-size-base);
   margin: 0;
-  font-weight: 600;
-}
-
-.timer-btn h3 {
-  font-size: var(--font-size-heading);
-  font-weight: 800;
+  font-weight: 400;
 }
 
 #timer-status {
@@ -510,3 +521,4 @@ button {
   margin-top: 1rem;
   color: var(--color-muted);
 }
+

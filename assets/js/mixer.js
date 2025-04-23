@@ -197,12 +197,13 @@ const requestWakeLock = async () => {
 // I used requestAnimationFrame to continuously check gain values and toggle a .pulsing class. 
 // Inspired by CodePen pulse animation from https://codepen.io/vram1980/pen/oNvWdO
 function updateDotPulse() {
-  Object.entries(noisePlayers).forEach(([color, { gainNode }]) => {
+  Object.entries(noisePlayers).forEach(([color, { gainNode, slider }]) => {
     const dot = document.querySelector(`#menu li#${color}-noise`);
     if (!dot) return;
-    const isAudible = parseInt(noisePlayers[color].slider.value) > 0;
+    const isAudible = parseInt(slider.value) > 0;
     dot.classList.toggle('pulsing', isAudible);
   });
-  requestAnimationFrame(updateDotPulse); 
+  requestAnimationFrame(updateDotPulse);
 }
+
 requestAnimationFrame(updateDotPulse);
