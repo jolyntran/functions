@@ -8,20 +8,20 @@ const noiseTracks = {
   pink: ["assets/sounds/pink.mp3"],
   brown: ["assets/sounds/brown.mp3"],
   grey: ["assets/sounds/grey.mp3"],
-  white: ["assets/sounds/white.mp3"]
+  white: ["assets/sounds/white.mp3"],
 };
 
 // // I wanted to adjust the volumes so they are all even before users can adjust the Web Player API
 // // Using Orange as a baseline
 // noisePlayers["red"].audio.volume = 0.5;
 // noisePlayers["yellow"].audio.volume = 1;
-// noisePlayers["yellow"].gainNode.gain.value = 1.5; 
+// noisePlayers["yellow"].gainNode.gain.value = 1.5;
 // noisePlayers["green"].audio.volume = 0.5;
 // noisePlayers["blue"].audio.volume = 0.5;
 // noisePlayers["violet"].audio.volume = 0.5;
 // noisePlayers["pink"].audio.volume = 0.25;
 // noisePlayers["grey"].audio.volume = 1;
-// noisePlayers["grey"].gainNode.gain.value = 1.25; 
+// noisePlayers["grey"].gainNode.gain.value = 1.25;
 // noisePlayers["white"].audio.volume = 0.25;
 
 // I needed a way to programmatically route and control audio playback for each noise color.
@@ -79,7 +79,7 @@ document.querySelectorAll(".noise-card").forEach((section) => {
   };
 
   slider.addEventListener("input", updateVolume);
-  updateVolume(); 
+  updateVolume();
 });
 
 // I wanted to provide a global volume control for all noise tracks.
@@ -117,48 +117,50 @@ play.addEventListener("click", async () => {
 });
 
 function applyPreset(presetValues) {
-	Object.values(noisePlayers).forEach(({ slider, gainNode, display, audio }) => {
-		audio.pause();
-		audio.currentTime = 0;
-		slider.value = 0;
-		gainNode.gain.value = 0;
-		display.textContent = "0";
-	});
+  Object.values(noisePlayers).forEach(
+    ({ slider, gainNode, display, audio }) => {
+      audio.pause();
+      audio.currentTime = 0;
+      slider.value = 0;
+      gainNode.gain.value = 0;
+      display.textContent = "0";
+    }
+  );
 
-	for (const [color, value] of Object.entries(presetValues)) {
-		const player = noisePlayers[color];
-		if (player) {
-			player.slider.value = value;
-			player.gainNode.gain.value = value / 100;
-			player.display.textContent = value;
-		}
-	}
+  for (const [color, value] of Object.entries(presetValues)) {
+    const player = noisePlayers[color];
+    if (player) {
+      player.slider.value = value;
+      player.gainNode.gain.value = value / 100;
+      player.display.textContent = value;
+    }
+  }
 
-	audioContext.resume();
+  audioContext.resume();
 
-	Object.values(noisePlayers).forEach(({ slider, audio }) => {
-		if (parseInt(slider.value) > 0) {
-			audio.play();
-		}
-	});
+  Object.values(noisePlayers).forEach(({ slider, audio }) => {
+    if (parseInt(slider.value) > 0) {
+      audio.play();
+    }
+  });
 
-	isPlaying = true;
-	play.innerHTML = pauseSVG;
+  isPlaying = true;
+  play.innerHTML = pauseSVG;
 }
-
 
 // I needed a way to stop and reset all noise tracks with one click.
 // I paused and reset currentTime on each track to return them to the beginning.
 // I also reset sliders and volumes to their default values.
 // Now, only red and orange are reset to 50, and the rest go to 0.
 document.getElementById("reset").addEventListener("click", () => {
-  Object.entries(noisePlayers).forEach(([color, { audio, slider, gainNode, display }]) => {
-    audio.currentTime = 0;
-    slider.value = 0;
-    gainNode.gain.value = 0;
-    display.textContent = "0";
-    
-  });
+  Object.entries(noisePlayers).forEach(
+    ([color, { audio, slider, gainNode, display }]) => {
+      audio.currentTime = 0;
+      slider.value = 0;
+      gainNode.gain.value = 0;
+      display.textContent = "0";
+    }
+  );
 
   masterSlider.value = 50;
   masterGainNode.gain.value = 0.5;
@@ -178,32 +180,40 @@ document.getElementById("randomize").addEventListener("click", () => {
 });
 
 // Making sure the browser doesn't turn off after being inactive//
-// Took this from https://developer.chrome.com/blog/new-in-chrome-79/#wake-lock 
-// It requests a lock, and prevents the screen from dimming or the screensaver from kicking in. 
+// Took this from https://developer.chrome.com/blog/new-in-chrome-79/#wake-lock
+// It requests a lock, and prevents the screen from dimming or the screensaver from kicking in.
 let wakeLock = null;
 const requestWakeLock = async () => {
   try {
-    wakeLock = await navigator.wakeLock.request('screen');
-    wakeLock.addEventListener('release', () => {
-      console.log('Wake Lock was released');
+    wakeLock = await navigator.wakeLock.request("screen");
+    wakeLock.addEventListener("release", () => {
+      console.log("Wake Lock was released");
     });
-    console.log('Wake Lock is active');
+    console.log("Wake Lock is active");
   } catch (err) {
     console.error(`${err.name}, ${err.message}`);
   }
 };
 
-// I wanted menu dots to pulse when their associated noise is playing (volume > 0). 
-// I used requestAnimationFrame to continuously check gain values and toggle a .pulsing class. 
+// I wanted menu dots to pulse when their associated noise is playing (volume > 0).
+// I used requestAnimationFrame to continuously check gain values and toggle a .pulsing class.
 // Inspired by CodePen pulse animation from https://codepen.io/vram1980/pen/oNvWdO
 function updateDotPulse() {
-  Object.entries(noisePlayers).forEach(([color, { gainNode, slider }]) => {
-    const dot = document.querySelector(`#menu li#${color}-noise`);
+  Object.entries(noisePlayers).forEach(([color, { slider }]) => {
+    const dotId = `${color}-noise`;
+    const dot = document.querySelector(`#menu li#${dotId}`);
     if (!dot) return;
     const isAudible = parseInt(slider.value) > 0;
-    dot.classList.toggle('pulsing', isAudible);
+    if (isAudible) {
+      dot.classList.add('pulsing');
+    } else {
+      dot.classList.remove('pulsing');
+    }
   });
+
   requestAnimationFrame(updateDotPulse);
 }
 
-requestAnimationFrame(updateDotPulse);
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(updateDotPulse);
+});
