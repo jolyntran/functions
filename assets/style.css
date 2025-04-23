@@ -485,12 +485,12 @@ button {
   transition: transform 0.3s ease;
 } */
 
-#presets-drawer {
+/* #presets-drawer {
   padding-top: 1rem;
   position: absolute;
   bottom: 0.75rem;
   width: 100%;
-}
+} */
 
 .bottom-drawer h2 {
   font-family: monospace;
