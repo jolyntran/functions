@@ -786,7 +786,7 @@ button {
     --padding-card: 2rem;
     --card-width: 30rem;
     --card-radius: 16px;
-    --swatch-height: 20rem;
+    --swatch-height: 18rem;
     --slider-height: 1.7rem;
     --thumb-size: 3.5rem;
   }
@@ -806,11 +806,11 @@ button {
   }
 
   .noise-card {
-    height: 28rem;
+    height: 25rem;
   }
 
   .swatch {
-    height: 19rem;
+    height: 16rem;
   }
 
   .drawer {
