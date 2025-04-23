@@ -538,3 +538,39 @@ button {
   justify-content: center;
   text-align: center;
 }
+
+@media (min-width: 768px) {
+  :root {
+    --card-width: 20rem;
+    --swatch-height: 20rem;
+    --font-size-base: 1.125rem;
+    --slider-height: 1.4rem;
+    --thumb-size: 2.5rem;
+  }
+
+  .noise-card {
+    height: var(--swatch-height);
+    transform: scale(1);
+  }
+
+  .controls {
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: var(--font-size-base);
+  }
+
+  #presets,
+  #sleep {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+  }
+
+  .range {
+    height: var(--slider-height);
+  }
+
+  .arrow {
+    font-size: 2rem;
+  }
+}
