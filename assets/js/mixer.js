@@ -89,14 +89,13 @@ const masterSlider = document.getElementById("masterVolume");
 masterSlider.addEventListener("input", () => {
   const volume = masterSlider.value;
   masterGainNode.gain.value = volume / 100;
-  masterDisplay.textContent = `${volume}%`;
 });
 
 // I needed a way to start and pause all noise tracks with one button.
 // I used audioContext.resume() to satisfy autoplay policies, then toggled play and pause on click.
 // I swapped in a Play/Pause SVG by changing innerHTML.
 const play = document.getElementById("play");
-play.innerHTML = playSVG; // Set initial SVG
+play.innerHTML = playSVG; 
 
 play.addEventListener("click", async () => {
   await audioContext.resume();
@@ -199,21 +198,11 @@ const requestWakeLock = async () => {
 // I used requestAnimationFrame to continuously check gain values and toggle a .pulsing class.
 // Inspired by CodePen pulse animation from https://codepen.io/vram1980/pen/oNvWdO
 function updateDotPulse() {
-  Object.entries(noisePlayers).forEach(([color, { slider }]) => {
-    const dotId = `${color}-noise`;
-    const dot = document.querySelector(`#menu li#${dotId}`);
+  Object.entries(noisePlayers).forEach(([color, { gainNode }]) => {
+    const dot = document.querySelector(`#menu li#${color}-noise`);
     if (!dot) return;
-    const isAudible = parseInt(slider.value) > 0;
-    if (isAudible) {
-      dot.classList.add('pulsing');
-    } else {
-      dot.classList.remove('pulsing');
-    }
+    const isAudible = parseInt(noisePlayers[color].slider.value) > 0;
+    dot.classList.toggle('pulsing', isAudible);
   });
-
   requestAnimationFrame(updateDotPulse);
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-  requestAnimationFrame(updateDotPulse);
-});
