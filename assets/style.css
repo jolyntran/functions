@@ -75,7 +75,7 @@ dialog {
   place-items: center;
   background-color: var(--color-bg);
   border-radius: calc(var(--card-radius));
-  font-size: calc(0.65 * var(--font-size-base));
+  font-size: calc(0.875 * var(--font-size-base));
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -104,7 +104,7 @@ svg {
   box-shadow: inset 2px 2px 4px #d1d1d1, inset -2px -2px 4px #ffffff;
   border-radius: calc(3 * var(--card-radius));
   font-family: monospace;
-  font-size: calc(0.5 * var(--font-size-base));
+  font-size: calc(0.75 * var(--font-size-base));
 }
 
 ::backdrop {
@@ -414,7 +414,7 @@ svg {
   align-items: center;
   z-index: 1000;
   position: relative;
-  margin-bottom: -10rem;
+  /* margin-bottom: -rem; */
 }
 
 #masterVolume {
