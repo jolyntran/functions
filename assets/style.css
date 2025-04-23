@@ -80,7 +80,7 @@ dialog {
 
 .modal h1 {
   font-family: monospace;
-  padding-bottom: 1rem;
+  padding-bottom: var(--padding-card);
 }
 
 .modal p {
@@ -92,7 +92,7 @@ svg {
 }
 
 .description {
-  padding-bottom: 1rem;
+  padding-bottom: var(--padding-card);
   padding-left: var(--padding-card);
   padding-right: var(--padding-card);
 }
@@ -403,12 +403,16 @@ svg {
 /* MASTER CONTROLS */
 .master-controls {
   background: var(--color-white);
-  padding: var(--padding-card) 1rem;
+  padding: var(--padding-card);
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 1000;
-  position: relative;
+  position: fixed;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 #masterVolume {
@@ -456,7 +460,7 @@ button {
 /* PRESETS */
 .bottom-drawer {
   position: fixed;
-  bottom: 0;
+  bottom: 7.5rem;
   left: 0;
   width: 100%;
   background: var(--color-white);
@@ -464,7 +468,7 @@ button {
   transform: translateY(100%);
   transition: transform 0.3s ease;
   z-index: 999;
-  padding: 1rem;
+  padding: var(--padding-card);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -476,9 +480,16 @@ button {
   position: relative;
 }
 
-.drawer.drawer-open .master-controls {
-  transform: translateY(-9rem); 
+/* .drawer.drawer-open .master-controls {
+  transform: translateY(-12rem); 
   transition: transform 0.3s ease;
+} */
+
+#presets-drawer {
+  padding-top: 1rem;
+  position: absolute;
+  bottom: 0.75rem;
+  width: 100%;
 }
 
 .bottom-drawer h2 {
@@ -499,7 +510,7 @@ button {
   font-size: var(--font-size-base);
   background: #f4f4f4;
   border-radius: var(--card-radius);
-  padding: 1rem;
+  padding: var(--padding-card);
   box-shadow: inset 2px 2px 4px #d1d1d1, inset -2px -2px 4px #ffffff;
   cursor: pointer;
   display: flex;
@@ -520,5 +531,7 @@ button {
   font-size: 0.75rem;
   margin-top: 1rem;
   color: var(--color-muted);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-
